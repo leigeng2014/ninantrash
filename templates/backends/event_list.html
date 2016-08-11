@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n staticfiles %}
+{% block title %}{% if page_title %}{{ page_title }}{% else %}{% trans "Timeline" %}{% endif %}{% endblock %}
+{% block content %}
+<div class="nn-note-section" id="timeline_container">
+    <div class="page-header">
+        <h3>{% trans "Timeline" %}</h3>
+    </div>
+    {% include page_template %}
+</div>
+{% endblock content %}
+{% block extra_js %}
+    <script src="{% static 'endless_pagination/js/endless-pagination.js' %}"></script>
+    <script>
+	$.endlessPaginate({
+		paginateOnScroll: true,
+        paginateOnScrollChunkSize: 5});
+	</script>
+{% endblock %}

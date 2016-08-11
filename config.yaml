@@ -1,0 +1,41 @@
+name: ninan
+
+version: 1
+
+libraries:
+- name: django
+  version: "1.5"
+
+appname: ninan
+
+handlers:
+
+- url: /static
+  static_dir: ninan/static/ 
+  gzip: on
+- url: /upload
+  static_dir: static/upload/
+  gzip: on
+- url: /root.txt
+  static_dir: static/root.txt
+  gzip: on
+
+cron:
+- description: db_backup
+  url: backends/backup/
+  schedule: "45 21 * * *"
+
+
+- description: whoosh_search_index_update 
+  url: backends/updateindex/24/
+  schedule: "45 1 * * *"
+
+handle:
+- compress: if ( out_header["Content-type"] ~ "text/css" ) compress
+- compress: if ( out_header["Content-type"] ~ "text/javascript" ) compress
+- compress: if ( out_header["Content-type"] ~ "image/jpeg" ) compress
+- compress: if ( out_header["Content-type"] ~ "image/png" ) compress
+- compress: if ( out_header["Content-type"] ~ "image/pjpeg" ) compress
+- compress: if ( out_header["Content-type"] ~ "image/gif" ) compress
+- compress: if ( out_header["Content-type"] ~ "image/bmp" ) compress
+- expire: if( path ~ "static" ) time 3600

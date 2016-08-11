@@ -1,0 +1,25 @@
+{% load i18n staticfiles %}
+    <table class="table table-bordered social-login">
+        <tr>
+            <td>{% trans "Weibo" %}</td>
+            <td>{% trans "Douban" %}</td>
+            <td>{% trans "Email" %}</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="{% url 'social:begin' 'weibo' %}" title="{% trans 'Log in by WeiBo' %}">
+                    <div class="social-icon icon-weibo"></div>
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'social:begin' 'douban-oauth2' %}" title="{% trans 'Log in by Douban' %}">
+                    <div class="social-icon icon-douban"></div>
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'social:begin' 'email' %}" title="{% trans 'Log in by email' %}">
+                    <div class="social-icon icon-email"></div>
+                </a>
+            </td>
+        </tr>
+    </table>

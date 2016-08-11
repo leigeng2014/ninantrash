@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load i18n ninan_extras %}
+{% block title %}{% blocktrans with uname=user_obj.username %}Milestones of {{ uname }}{% endblocktrans %}{% endblock %}
+{% block sidebar %}
+<div class="nn-sidebar hidden-print visible-lg">
+    <div class="page-header">
+        <center><h4>{% blocktrans with uname=user_obj.username %}{{ uname }}'s milestone{% endblocktrans %}</h4></center>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="badge">{{ extra_data.stone_count }}</span>
+            {% trans "Milestones:"%}
+        </li>
+        <li class="list-group-item">
+            <span class="badge">{{ extra_data.things_count }}</span>
+            {% trans "Things:"%}
+        </li>
+        <li class="list-group-item">
+            <span class="badge">{{ extra_data.scores }}</span>
+            {% trans "Total scores:"%}
+        </li>
+    </ul>
+</div>
+{% endblock %}
+{% block content %}
+<div class="nn-note-content" >
+    <div class="page-header">
+        <h3>{% blocktrans with uname=user_obj.username %}{{ uname }}'s milestone{% endblocktrans %}</h3>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>{% trans "Name" %}</td>
+                <td>{% trans "Progress" %}</td>
+                <td>{% trans "Status" %}</td>
+                <td>{% trans "Started At" %}</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stone in object_list %}
+            <tr>
+                <td>{{ forloop.counter0 }}</td>
+                <td><a href="{% url 'milestone.detailview' stone.pk %}"
+                        alt="{% trans "click to show detail" %}">
+                        {{ stone.title }}</a></td>
+                <td>
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar" role="progressbar"
+                            aria-valuenow="{{ stone.current_score }}"
+                            aria-valuemin="0"
+                            aria-valuemax="{{ stone.achieve_score }}"
+                            style="width: {{ stone.percentage | percentage }}">
+                            <span>{{ stone.current_score }} / {{ stone.achieve_score }}</span>
+                        </div>
+                    </div>
+                </td>
+                <td>{{ stone.get_status_display }}</td>
+                <td>{{ stone.date_created }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

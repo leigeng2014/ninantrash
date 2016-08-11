@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load i18n %}
+
+{% block content %}
+<div class="nn-note-section">
+    <div class="page-header">
+        <h3>{% trans "Signup with username" %}</h3>
+    </div>
+<form action="{% url 'social:complete' "username" %}" method="post" role="form">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="username">{% trans "Username" %}:</label>
+    <input id="username" type="text" name="username" value="" class="form-control"
+     placeholder="{% trans 'Enter username' %}"/>
+  </div>
+
+  <div class="form-group">
+  <label for="password">{% trans "Password for this site" %}:</label>
+  <input id="password" type="password" name="password" value=""
+  class="form-control" placeholder="{% trans 'Password' %}"/>
+  </div>
+
+  <button class="btn btn-default">{% trans "Signup" %}</button>
+</form>
+</div>
+{% endblock %}

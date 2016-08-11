@@ -1,0 +1,1971 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Ninan 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-12 22:21+0800\n"
+"PO-Revision-Date: 2015-02-12 22:21+0800\n"
+"Last-Translator: xiaoyu <xiaokong1937@gmail.com>\n"
+"Language-Team: x.y <xiaokong1937@gmail.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+
+#: backends/models.py:31 weixin/models.py:172
+msgid "nickname"
+msgstr "昵称"
+
+#: backends/models.py:32
+msgid "avatar thumb"
+msgstr "头像缩略图"
+
+#: backends/models.py:35
+msgid "avatar"
+msgstr "头像"
+
+#: backends/models.py:37
+msgid "signature"
+msgstr "签名"
+
+#: backends/models.py:40
+msgid "biography"
+msgstr "简介"
+
+#: backends/models.py:90
+msgid "resource"
+msgstr "资源"
+
+#: backends/models.py:93
+#, python-format
+msgid "%(user)s status"
+msgstr "%(user)s的状态"
+
+#: backends/models.py:119
+msgid "event"
+msgstr "事件"
+
+#: backends/models.py:120
+msgid "events"
+msgstr "事件"
+
+#: backends/views.py:41
+#, python-format
+msgid "%(user)s 's timeline"
+msgstr "%(user)s的时间线"
+
+#: backends/views.py:60
+msgid "Invalid file."
+msgstr "无效的文件"
+
+#: feedfish/genericviews.py:147
+msgid "The little fishes are hungry, go and feed them !"
+msgstr "小鱼鱼们都饿了！快去喂鱼！"
+
+#: feedfish/genericviews.py:158
+msgid "Go and change water for fishes! "
+msgstr "快去给小鱼鱼换水！"
+
+#: feedfish/genericviews.py:166
+msgid "Ninan Feed Fish"
+msgstr "呢喃喂鱼"
+
+#: feedfish/models.py:25
+msgid "One little fish died."
+msgstr "一条小鱼鱼仙逝了"
+
+#: feedfish/models.py:26
+msgid "More than one fish died."
+msgstr "超过一条小鱼鱼仙逝了"
+
+#: feedfish/models.py:27
+msgid "They eat a lot."
+msgstr "他们能吃能喝"
+
+#: feedfish/models.py:28
+msgid "Better than usual."
+msgstr "状况不错"
+
+#: feedfish/models.py:29
+msgid "New baby fish come to the world."
+msgstr "小小鱼鱼降生啦！"
+
+#: feedfish/models.py:30
+msgid "He didn't feed them this time."
+msgstr "这次忘记喂鱼了"
+
+#: feedfish/models.py:34
+msgid "Feed fish"
+msgstr "喂鱼"
+
+#: feedfish/models.py:35
+msgid "Change Water"
+msgstr "换水"
+
+#: feedfish/models.py:40
+msgid "fish status"
+msgstr "鱼鱼状况"
+
+#: feedfish/models.py:43
+msgid "fish count"
+msgstr "鱼鱼数量"
+
+#: feedfish/models.py:45
+msgid "fish photo"
+msgstr "小鱼鱼的照片"
+
+#: feedfish/models.py:48
+msgid "Photo of fishes."
+msgstr "小鱼鱼的照片"
+
+#: feedfish/models.py:50
+msgid "action"
+msgstr "动作"
+
+#: feedfish/models.py:53 templates/feedfish/index.html:19
+msgid "Remark"
+msgstr "备注"
+
+#: feedfish/models.py:57 feedfish/models.py:58 templates/admin/base.html:86
+msgid "Feed Fish"
+msgstr "喂鱼"
+
+#: milestone/models.py:28
+msgid "Milestone is ongoning"
+msgstr "里程碑正在进行中"
+
+#: milestone/models.py:29
+msgid "Milestone has been finished."
+msgstr "里程碑已达成"
+
+#: milestone/models.py:30
+msgid "Milestone has been aborted."
+msgstr "里程碑已放弃"
+
+#: milestone/models.py:36
+msgid "base score"
+msgstr "基础积分"
+
+#: milestone/models.py:38
+msgid "Base score for your milestone. Can be negetive."
+msgstr "里程碑的基础积分，可以是负数。"
+
+#: milestone/models.py:40
+msgid "achieve score"
+msgstr "达成积分"
+
+#: milestone/models.py:42
+msgid ""
+"Final score for your milestone. If a milestone's score reached its "
+"`achieve_score`, the milestone will be marked as `complished`."
+msgstr ""
+"里程碑的最终积分。如果一个里程碑累计的积分达到了这个最终积分，这个里程碑将被"
+"标记为已达成。"
+
+#: milestone/models.py:46 note/models.py:64 weixin/models.py:26
+#: xlink/models.py:34 xlink/models.py:51
+msgid "title"
+msgstr "标题"
+
+#: milestone/models.py:48
+msgid "The title of your milestone."
+msgstr "里程碑的标题"
+
+#: milestone/models.py:49 xlink/models.py:35 xlink/models.py:52
+msgid "description"
+msgstr "描述"
+
+#: milestone/models.py:51
+msgid "status"
+msgstr "状态"
+
+#: milestone/models.py:54
+msgid "Status of your milestone."
+msgstr "里程碑的状态"
+
+#: milestone/models.py:78
+#, python-format
+msgid "started a new milestone : %(title)s"
+msgstr "开启了新的里程碑 : %(title)s"
+
+#: milestone/models.py:89 milestone/models.py:103
+msgid "milestone"
+msgstr "里程碑"
+
+#: milestone/models.py:90
+msgid "milestones"
+msgstr "里程碑"
+
+#: milestone/models.py:101
+msgid "name"
+msgstr "名称"
+
+#: milestone/models.py:102
+msgid "score"
+msgstr "基础积分"
+
+#: milestone/models.py:107
+msgid "thing"
+msgstr "事件"
+
+#: milestone/models.py:108
+msgid "things"
+msgstr "事件"
+
+#: milestone/models.py:120
+#, python-format
+msgid "%(user)s achieved a new milestone : %(title)s"
+msgstr "%(user)s 达成了一项里程碑 : %(title)s"
+
+#: ninan/mail.py:13
+msgid "Validate your account"
+msgstr "验证您的账号"
+
+#: ninan/mail.py:14
+#, python-brace-format
+msgid ""
+"Please click the follow link to active your accout at ninan.sinaapp.com .\n"
+" {0}"
+msgstr "请点击以下链接来激活您在ninan.sinaapp.com的账号{0}"
+
+#: note/feeds.py:12
+msgid "Note Feed on Ninan"
+msgstr "订阅呢喃日记"
+
+#: note/feeds.py:14
+msgid "Latest Note Post on Ninan"
+msgstr "呢喃上的最新一篇日记"
+
+#: note/models.py:34 templates/note/note_detail.html:39
+#: templates/note/note_list_page.html:33 templates/note/note_sidebar.html:13
+#: templates/weixin/weixinmp_list.html:50
+msgid "Tag"
+msgstr "标签"
+
+#: note/models.py:43
+msgid "taggeditem"
+msgstr "标签"
+
+#: note/models.py:44
+msgid "taggeditems"
+msgstr "标签"
+
+#: note/models.py:49 note/models.py:55 note/models.py:68
+msgid "category"
+msgstr "分类"
+
+#: note/models.py:56
+msgid "categories"
+msgstr "分类"
+
+#: note/models.py:65 weixin/models.py:28 weixin/models.py:121
+#: weixin/models.py:143
+msgid "content"
+msgstr "内容"
+
+#: note/models.py:70
+msgid "allow_comment"
+msgstr "允许评论"
+
+#: note/models.py:71
+msgid "wrote in reStructuredText"
+msgstr "使用reStruturedText编写"
+
+#: note/models.py:75
+msgid "title_url"
+msgstr "标题链接"
+
+#: note/models.py:76
+msgid ""
+"Link of the note. Leave blank if you want to use the Pinyin of title. "
+"Letters, numbers and  /./+/-/ characters"
+msgstr "日记的链接。如果要使用标题的汉语拼音，请留空。只允许字母数字以及.+-"
+
+#: note/models.py:81
+msgid "Enter a valid title link."
+msgstr "输入一个有效的标题链接"
+
+#: note/models.py:88
+msgid "note"
+msgstr "日记"
+
+#: note/models.py:89
+msgid "notes"
+msgstr "日记"
+
+#: note/models.py:117 weixin/models.py:81
+msgid "Time created"
+msgstr "创建时间"
+
+#: note/models.py:125
+#, python-format
+msgid "wrote a new note : %(title)s"
+msgstr "写了新日记 : %(title)s"
+
+#: note/genericviews/list.py:26 templates/note/note_list.html:5
+msgid "Note List"
+msgstr "日记列表"
+
+#: note/genericviews/list.py:59
+#, python-format
+msgid "Notes tagged as [%(tag)s]"
+msgstr "标记为[%(tag)s]的日记"
+
+#: note/genericviews/list.py:85
+#, python-format
+msgid "No notes in category %(cat_id)s ."
+msgstr "分类[%(cat_id)s]下没有日记。"
+
+#: note/genericviews/list.py:89
+#, python-format
+msgid "Notes in category %(cat)s"
+msgstr "分类[%(cat)s]下的日记"
+
+#: note/genericviews/list.py:97
+#, python-format
+msgid "Note created by %(author)s"
+msgstr "%(author)s 创建的日记"
+
+#: note/genericviews/list.py:115
+#, python-format
+msgid "Notes created in %(year)s - %(month)s "
+msgstr "%(year)s年%(month)s月创建的日记"
+
+#: reminder/admin.py:123
+msgid "The remind method has been commited , but not valid."
+msgstr "提醒方法已经提交，但没有审核生效"
+
+#: reminder/admin.py:128
+msgid ""
+"The remind method has been commited and validated.You can now add reminder. "
+msgstr "提醒方法已经提交审核生效。现在，你可以创建提醒了。"
+
+#: reminder/admin.py:132
+msgid "The validate code was not correct."
+msgstr "验证码不正确。"
+
+#: reminder/admin.py:153
+#, python-format
+msgid ""
+"The validate code has been sent to %(extra_info)s . Please input code into "
+"[Validate code] area.\n"
+"If you didn't receive it, wait for 10 minutes to send again."
+msgstr ""
+"验证码已经发送至%(extra_info)s。请在[验证码]内填入。如果没有收到，请在10分钟"
+"后重新发送。"
+
+#: reminder/admin.py:161
+msgid "The remind type and extra_info are not valid."
+msgstr "提醒方法和附加信息不是正确的格式。"
+
+#: reminder/admin.py:205
+#, python-format
+msgid ""
+"[Ninan Reminder]: Your validate code for Ninan is %(code)s . We are sorry to "
+"bother, if this is not applied by you. Just ignore it. "
+msgstr ""
+"[呢喃提醒]：您的验证码是%(code)s。如果这不是你申请的，请忽略。抱歉打扰。"
+
+#: reminder/forms.py:13 xlink/admin.py:24 xlink/admin.py:36
+msgid "Click to select time."
+msgstr "点击选择时间。"
+
+#: reminder/forms.py:14 reminder/models.py:75 reminder/models.py:76
+msgid "First remind time."
+msgstr "首次提醒时间"
+
+#: reminder/forms.py:30
+msgid "Remind cycle was not a valid integer."
+msgstr "提醒周期不是一个有效的数字。"
+
+#: reminder/forms.py:35
+msgid ""
+"When remind type = `every * minutes` , cycle should be greater than 10 "
+"minutes."
+msgstr "当提醒方式为`每*分钟`时，提醒周期需要大于10分钟。"
+
+#: reminder/forms.py:47
+#, python-format
+msgid "There are invalid integers in cycle. The integers are %(slize)s"
+msgstr "提醒周期中包含非数字。这些非数字是%(slize)s。"
+
+#: reminder/forms.py:54
+msgid "When remind type is `weekly`, cycle should in 1~7"
+msgstr "当提醒方式为`每周`时， 提醒周期需在1～7之内。"
+
+#: reminder/forms.py:84 reminder/forms.py:86
+msgid "Not a valid number."
+msgstr "不是一个有效的数字"
+
+#: reminder/forms.py:90
+msgid "QQ not in range."
+msgstr "QQ 号码不在有效的范围内（>10000）"
+
+#: reminder/forms.py:94
+msgid "Not a valid method."
+msgstr "不是有效的提醒方法"
+
+#: reminder/models.py:19
+msgid "Remind only once"
+msgstr "提醒一次"
+
+#: reminder/models.py:20
+msgid "Remind daily."
+msgstr "每天提醒"
+
+#: reminder/models.py:21
+msgid "Remind weekly"
+msgstr "每周提醒"
+
+#: reminder/models.py:22
+msgid "Remind only on workdays."
+msgstr "只在工作日提醒"
+
+#: reminder/models.py:23
+msgid "Remind at every * minutes."
+msgstr "每*分钟提醒"
+
+#: reminder/models.py:24
+msgid "Remind on which day of a week."
+msgstr "每周几提醒"
+
+#: reminder/models.py:28
+msgid "Remind by QQ mail."
+msgstr "通过QQ邮件提醒"
+
+#: reminder/models.py:31
+msgid "Sunday"
+msgstr "星期天"
+
+#: reminder/models.py:31
+msgid "Monday"
+msgstr "星期一"
+
+#: reminder/models.py:32
+msgid "Tuesday"
+msgstr "星期二"
+
+#: reminder/models.py:32
+msgid "Wednesday"
+msgstr "星期三"
+
+#: reminder/models.py:33
+msgid "Thursday"
+msgstr "星期四"
+
+#: reminder/models.py:33
+msgid "Friday"
+msgstr "星期五"
+
+#: reminder/models.py:34
+msgid "Staturday"
+msgstr "星期六"
+
+#: reminder/models.py:45
+msgid "Remind method type."
+msgstr "提醒方法"
+
+#: reminder/models.py:47
+msgid "Phone number or QQ number"
+msgstr "手机号或者QQ号"
+
+#: reminder/models.py:49
+msgid "Validate code"
+msgstr "验证码"
+
+#: reminder/models.py:51
+msgid "Expire in."
+msgstr "验证码过期时间"
+
+#: reminder/models.py:52
+msgid "Generate by."
+msgstr "生成来源"
+
+#: reminder/models.py:64
+#, python-format
+msgid "%(title)s Target: %(content)s."
+msgstr "%(title)s 目标： %(content)s。"
+
+#: reminder/models.py:69 reminder/models.py:91
+msgid "remind-method"
+msgstr "提醒方法"
+
+#: reminder/models.py:70
+msgid "remind-methods"
+msgstr "提醒方法"
+
+#: reminder/models.py:77
+msgid "Next remind time."
+msgstr "下次提醒时间"
+
+#: reminder/models.py:79
+msgid "Remind cycle."
+msgstr "提醒周期"
+
+#: reminder/models.py:80
+msgid ""
+"Input numbers. If remind type is `Remind on which day of a week`,put in 1-7 "
+"splitted by comma."
+msgstr "输入数字。如果提醒方式为`每周几提醒`，输入以逗号分隔的数字。"
+
+#: reminder/models.py:83
+msgid "Remind type."
+msgstr "提醒方式"
+
+#: reminder/models.py:85
+msgid "Reminder's title."
+msgstr "提醒名称"
+
+#: reminder/models.py:86
+msgid "What to remind."
+msgstr "提醒内容"
+
+#: reminder/models.py:87
+msgid "Content of a reminder.This will be sent to your phone or your email."
+msgstr "提醒的内容。将会发送到你的手机或者邮箱。"
+
+#: reminder/models.py:98
+msgid "Next Remind Time"
+msgstr "下次提醒时间"
+
+#: reminder/models.py:102
+#, python-format
+msgid "Remind at every %(cycle)s minutes."
+msgstr "每隔%(cycle)s分钟提醒。"
+
+#: reminder/models.py:108
+#, python-format
+msgid "Remind on every %(day)s of a week."
+msgstr "每周%(day)s提醒。"
+
+#: reminder/models.py:113
+msgid "Description"
+msgstr "描述"
+
+#: reminder/models.py:116
+msgid "reminder"
+msgstr "提醒"
+
+#: reminder/models.py:117
+msgid "reminders"
+msgstr "提醒"
+
+#: reminder/views_utils.py:38
+#, python-format
+msgid "[Ninan Reminder]%(title)s : %(content)s"
+msgstr "[呢喃提醒]%(title)s : %(content)s"
+
+#: templates/404.html:3 templates/404.html.py:6
+msgid "404 Not Found"
+msgstr "404 木有找到"
+
+#: templates/404.html:7
+msgid "What you are looking for is not here."
+msgstr "你找的东西不在这里。"
+
+#: templates/500.html:3
+msgid "Server Internal Error"
+msgstr "服务器内部错误"
+
+#: templates/500.html:6
+msgid "Em...."
+msgstr "呃……"
+
+#: templates/500.html:7
+msgid ""
+"Something goes wrong with the server. Don't panic. Our engineers are fixing "
+"the bugs."
+msgstr "服务器AFK了。别慌！我们的工程师正在修复。"
+
+#: templates/500.html:8
+msgid "And the answer is 42. You are welcome."
+msgstr "（关于生命、宇宙,以及一切的）答案是42。不谢。"
+
+#: templates/about.html:3 templates/about.html.py:6 templates/base.html:77
+#: templates/base.html.py:130
+msgid "About"
+msgstr "关于"
+
+#: templates/about.html:7
+msgid "Ninan is a project deployed at SAE, written in Python and Django."
+msgstr "呢喃是一个部署在SAE上的项目，使用Python和Django编写。"
+
+#: templates/about.html:8
+msgid ""
+"We readlly appreciate <a href=\"https://www.djangoproject.com/\" target="
+"\"_blank\">Django</a>, <a href=\"http://getbootstrap.com/\" target=\"_blank"
+"\">Bootstrap</a>, <a href=\"http://sae.sina.com.cn/\" target=\"_blank\">SAE</"
+"a> and many other open-source project's wonderful products and with their "
+"supports to our project."
+msgstr ""
+"感谢<a href=\"https://www.djangoproject.com/\" target=\"_blank\">Django</a>, "
+"<a href=\"http://getbootstrap.com/\" target=\"_blank\">Bootstrap</a>, <a "
+"href=\"http://sae.sina.com.cn/\" target=\"_blank\">SAE</a> 以及其他开源项目对"
+"本项目的支持。"
+
+#: templates/about.html:9
+msgid ""
+"Also thanks to the CDN service of <a href=\"http://www.qiniu.com/\" target="
+"\"_blank\">QiNiu</a>."
+msgstr ""
+"感谢<a href=\"http://www.qiniu.com/\" target=\"_blank\">七牛</a>提供的CDN服"
+"务。"
+
+#: templates/about.html:10
+msgid "If you want to feedback, you can "
+msgstr "如果想要反馈，你可以"
+
+#: templates/about.html:10
+msgid "contact us"
+msgstr "联系我们"
+
+#: templates/base.html:17 templates/base.html.py:27 templates/base.html:32
+#: templates/admin/base.html:16 templates/admin/base.html.py:46
+#: templates/admin/base.html:51
+msgid "Ninan"
+msgstr "呢喃"
+
+#: templates/base.html:36 templates/base.html.py:40 templates/base.html:58
+#: templates/admin/500.html:6 templates/admin/base.html:55
+#: templates/admin/base.html.py:59 templates/admin/base.html:73
+#: templates/admin/invalid_setup.html:6 templates/admin/object_history.html:6
+#: templates/admin/auth/user/change_password.html:13
+msgid "Home"
+msgstr "首页"
+
+#: templates/base.html:38 templates/base.html.py:128
+#: templates/admin/base.html:57
+msgid "Note"
+msgstr "日记"
+
+#: templates/base.html:42
+msgid "Feed Note"
+msgstr "订阅日记"
+
+#: templates/base.html:44 templates/admin/base.html:60
+msgid "My Notes "
+msgstr "我的日记"
+
+#: templates/base.html:47 templates/admin/base.html:63
+msgid "Add a Note "
+msgstr "新增日记"
+
+#: templates/base.html:50 templates/admin/base.html:66
+msgid "Change a Note "
+msgstr "修改日记"
+
+#: templates/base.html:56 templates/admin/base.html:71
+#: templates/reminder/index.html:7
+msgid "Reminder"
+msgstr "提醒"
+
+#: templates/base.html:62 templates/admin/base.html:76
+msgid "My Reminder"
+msgstr "我的提醒"
+
+#: templates/base.html:63 templates/admin/base.html:77
+msgid "Add a Reminder"
+msgstr "新增提醒"
+
+#: templates/base.html:67 templates/admin/base.html:81
+msgid "My RemindMethod"
+msgstr "我的提醒方法"
+
+#: templates/base.html:68 templates/admin/base.html:82
+msgid "Add a RemindMethod"
+msgstr "新增提醒方法"
+
+#: templates/base.html:73 templates/feedfish/index.html:8
+msgid "FeedFish"
+msgstr "喂鱼"
+
+#: templates/base.html:74 templates/milestone/index.html:7
+msgid "Milestone"
+msgstr "里程碑"
+
+#: templates/base.html:76 templates/base.html.py:129
+msgid "Contact"
+msgstr "联系我们"
+
+#: templates/base.html:79
+msgid "Admin Index"
+msgstr "管理首页"
+
+#: templates/base.html:98
+msgid "Welcome,"
+msgstr "欢迎,"
+
+#: templates/base.html:102
+msgid "New user. "
+msgstr "新用户"
+
+#: templates/base.html:110
+msgid "Edit Profile"
+msgstr "编辑档案"
+
+#: templates/base.html:111 templates/admin/base.html:121
+msgid "Log out"
+msgstr "注销"
+
+#: templates/base.html:113 templates/admin/login.html:58
+#: templates/registration/login.html:5 templates/registration/login.html:59
+msgid "Log in"
+msgstr "登录"
+
+#: templates/base.html:148
+msgid "Loading..."
+msgstr "载入中……"
+
+#: templates/base.html:155 templates/admin/base.html:179
+msgid "Best viewed with "
+msgstr "最佳浏览效果"
+
+#: templates/contact.html:3 templates/contact.html.py:6
+#: templates/reminder/index.html:11
+msgid "Contact Us"
+msgstr "联系我们"
+
+#: templates/contact.html:8
+msgid "Or Sina WeiBo"
+msgstr "或新浪微博"
+
+#: templates/contact.html:9
+msgid "Em, we encoded the email using base64 to anti spam"
+msgstr "呃，为了防止垃圾邮件，地址使用了base64加密"
+
+#: templates/contact.html:10
+msgid "Click here to show email."
+msgstr "点我显示邮箱"
+
+#: templates/done.html:8
+msgid "Login success!"
+msgstr "登录成功"
+
+#: templates/done.html:10
+msgid "You are logged in as "
+msgstr "您已登录为"
+
+#: templates/done.html:11
+msgid "Logout"
+msgstr "注销"
+
+#: templates/done.html:13
+msgid "Associated"
+msgstr "已关联的账户"
+
+#: templates/done.html:19
+msgid "Disconnect"
+msgstr "断开"
+
+#: templates/done.html:25
+msgid "Associate"
+msgstr "关联以下账户"
+
+#: templates/email.html:7
+msgid "Add an Email"
+msgstr "绑定邮箱"
+
+#: templates/email.html:12 templates/email_signup.html:13
+msgid "Email address"
+msgstr "邮件地址"
+
+#: templates/email.html:15 templates/email_signup.html:15
+msgid "Enter email"
+msgstr "输入邮箱"
+
+#: templates/email.html:17 templates/admin/pagination.html:11
+#: templates/admin/submit_line.html:7 templates/kvdb/upload.html:13
+msgid "Save"
+msgstr "保存"
+
+#: templates/email_signup.html:8
+msgid "Signup with email"
+msgstr "使用邮箱地址登录"
+
+#: templates/email_signup.html:19 templates/username_signup.html:19
+msgid "Password for this site"
+msgstr "此站点的密码"
+
+#: templates/email_signup.html:21 templates/username_signup.html:21
+#: templates/admin/auth/user/change_password.html:38
+msgid "Password"
+msgstr "密码"
+
+#: templates/email_signup.html:25
+msgid "Full name"
+msgstr "全名"
+
+#: templates/email_signup.html:27
+msgid "Your full name"
+msgstr "您的全名"
+
+#: templates/email_signup.html:30 templates/username_signup.html:24
+msgid "Signup"
+msgstr "登录"
+
+#: templates/home.html:6 templates/registration/login.html:8
+msgid "Login"
+msgstr "登录"
+
+#: templates/login_index_modal.html:8
+msgid "Social Login"
+msgstr "社会化登录"
+
+#: templates/login_index_modal.html:15
+msgid "Close"
+msgstr "关闭"
+
+#: templates/search.html:4 templates/search_index.html:3
+#: templates/search_index.html.py:5 templates/search_index.html:10
+#: templates/search_index.html.py:11 templates/admin/search_form.html:10
+msgid "Search"
+msgstr "搜索"
+
+#: templates/search_index.html:14
+msgid "Submit"
+msgstr "发送"
+
+#: templates/search_index.html:35
+msgid "Searching..."
+msgstr "搜索中……"
+
+#: templates/search_index.html:36
+msgid "Searrching...please wait."
+msgstr "正在加载搜索结果，请稍等哦~"
+
+#: templates/social_backends.html:4
+msgid "Weibo"
+msgstr "微博"
+
+#: templates/social_backends.html:5
+msgid "Douban"
+msgstr "豆瓣"
+
+#: templates/social_backends.html:6
+msgid "Email"
+msgstr "邮箱"
+
+#: templates/social_backends.html:10
+msgid "Log in by WeiBo"
+msgstr "使用新浪微博账号登录"
+
+#: templates/social_backends.html:15
+msgid "Log in by Douban"
+msgstr "使用豆瓣账号登录"
+
+#: templates/social_backends.html:20
+msgid "Log in by email"
+msgstr "使用邮箱账号登录"
+
+#: templates/username_signup.html:8
+msgid "Signup with username"
+msgstr "使用用户名登录"
+
+#: templates/username_signup.html:13
+msgid "Username"
+msgstr "用户名"
+
+#: templates/username_signup.html:15
+msgid "Enter username"
+msgstr "输入用户名"
+
+#: templates/validation_sent.html:8
+msgid "Validation sent"
+msgstr "验证码已发送"
+
+#: templates/validation_sent.html:10
+msgid "A email validation was sent to "
+msgstr "邮箱验证已发送至"
+
+#: templates/admin/404.html:4 templates/admin/404.html.py:9
+msgid "Page not found"
+msgstr "页面没有找到"
+
+#: templates/admin/404.html:11
+msgid "We're sorry, but the requested page could not be found."
+msgstr "很抱歉，请求的页面没有找到"
+
+#: templates/admin/500.html:7
+msgid "Server error"
+msgstr "服务器错误"
+
+#: templates/admin/500.html:11
+msgid "Server error (500)"
+msgstr "服务器错误（500）"
+
+#: templates/admin/500.html:15
+msgid "Server Error <em>(500)</em>"
+msgstr "服务器错误<em>(500)</em>"
+
+#: templates/admin/500.html:17
+msgid ""
+"There's been an error. It's been reported to the site administrators via "
+"email and should be fixed shortly. Thanks for your patience."
+msgstr "唔，出错了。错误已被报告给站点管理员，很快就会修复。谢谢您耐心等待。"
+
+#: templates/admin/actions.html:11
+msgid "Run the selected action"
+msgstr "执行选中的动作"
+
+#: templates/admin/actions.html:11
+msgid "Go"
+msgstr "执行"
+
+#: templates/admin/actions.html:18
+msgid "Click here to select the objects across all pages"
+msgstr "点击此处在所有页面中选择对象"
+
+#: templates/admin/actions.html:18
+#, python-format
+msgid "Select all %(total_count)s %(module_name)s"
+msgstr "全选 %(total_count)s 个 %(module_name)s"
+
+#: templates/admin/actions.html:20
+msgid "Clear selection"
+msgstr "清除选择"
+
+#: templates/admin/app_index.html:6 templates/admin/change_form.html:21
+#: templates/admin/change_list.html:40
+#: templates/admin/delete_confirmation.html:6
+#: templates/admin/delete_selected_confirmation.html:6
+#: templates/admin/index.html:5 templates/registration/logged_out.html:5
+msgid "Admin Home"
+msgstr "管理首页"
+
+#: templates/admin/app_index.html:8
+#, python-format
+msgid "<li><a href=\"#\">%(name)s Admin</a></li>"
+msgstr "<li><a href=\"#\">%(name)s 管理</a></li>"
+
+#: templates/admin/base.html:88
+msgid "Admin"
+msgstr "管理"
+
+#: templates/admin/base.html:115
+#: templates/admin/auth/user/change_password.html:17
+#: templates/admin/auth/user/change_password.html:51
+msgid "Change password"
+msgstr "修改密码"
+
+#: templates/admin/base_site.html:4 templates/registration/login.html:5
+msgid "Ninan Site Admin"
+msgstr "呢喃站点管理"
+
+#: templates/admin/base_site.html:7
+msgid "Ninan administration"
+msgstr "呢喃管理"
+
+#: templates/admin/change_form.html:22 templates/admin/change_form.html:23
+#: templates/admin/change_list.html:41 templates/admin/change_list.html:42
+#: templates/admin/delete_confirmation.html:7
+#: templates/admin/delete_confirmation.html:8
+#: templates/admin/delete_selected_confirmation.html:7
+#: templates/admin/delete_selected_confirmation.html:8
+msgid " Admin"
+msgstr "管理"
+
+#: templates/admin/change_form.html:24 templates/admin/index.html:28
+msgid "Add"
+msgstr "新增"
+
+#: templates/admin/change_form.html:31 templates/admin/object_history.html:10
+msgid "History"
+msgstr "历史"
+
+#: templates/admin/change_form.html:32
+#: templates/admin/edit_inline/stacked.html:9
+#: templates/admin/edit_inline/tabular.html:27
+msgid "View on site"
+msgstr "在站点上查看"
+
+#: templates/admin/change_form.html:45 templates/admin/change_list.html:74
+#: templates/admin/login.html:12
+#: templates/admin/auth/user/change_password.html:27
+#: templates/registration/login.html:13
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "请更正如下错误"
+msgstr[1] "请更正如下错误"
+
+#: templates/admin/change_list.html:52
+msgid "Filter"
+msgstr "过滤器"
+
+#: templates/admin/change_list.html:65
+#, python-format
+msgid "Add %(name)s"
+msgstr "增加 %(name)s"
+
+#: templates/admin/change_list_results.html:18
+msgid "Remove from sorting"
+msgstr "删除排序"
+
+#: templates/admin/change_list_results.html:19
+#, python-format
+msgid "Sorting priority: %(priority_number)s"
+msgstr "排序序号: %(priority_number)s"
+
+#: templates/admin/change_list_results.html:20
+msgid "Toggle sorting"
+msgstr "点击排序"
+
+#: templates/admin/delete_confirmation.html:10
+#: templates/admin/submit_line.html:3 templates/note/note_detail.html:23
+#: templates/note/note_list_page.html:15
+#: templates/weixin/weixinmp_detail.html:25
+#: templates/weixin/weixinmp_list.html:32
+msgid "Delete"
+msgstr "删除"
+
+#: templates/admin/delete_confirmation.html:17
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"related objects, but your account doesn't have permission to delete the "
+"following types of objects:"
+msgstr ""
+"删除 %(object_name)s '%(escaped_object)s' 将会导致删除其关联的对象，但是你的"
+"账户没有删除以下对象的权限："
+
+#: templates/admin/delete_confirmation.html:25
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
+"following protected related objects:"
+msgstr ""
+"删除 %(object_name)s '%(escaped_object)s' 将会需要删除如下受保护的对象："
+
+#: templates/admin/delete_confirmation.html:33
+#, python-format
+msgid ""
+"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"All of the following related items will be deleted:"
+msgstr ""
+"你真的要删除 %(object_name)s \"%(escaped_object)s\"？ 以下这些相关的条目也会"
+"被删除："
+
+#: templates/admin/delete_confirmation.html:38
+#: templates/admin/delete_selected_confirmation.html:43
+msgid "Yes, I'm sure"
+msgstr "是的，我确定"
+
+#: templates/admin/delete_selected_confirmation.html:9
+msgid "Delete multiple objects"
+msgstr "删除多个对象"
+
+#: templates/admin/delete_selected_confirmation.html:16
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+"删除选择的%(objects_name)s对象将会导致删除相关的对象，但是你的账户没有删除以"
+"下相关对象的权限："
+
+#: templates/admin/delete_selected_confirmation.html:24
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr "删除选中的%(objects_name)s需要删除以下受保护的相关联的对象："
+
+#: templates/admin/delete_selected_confirmation.html:32
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s? All of the "
+"following objects and their related items will be deleted:"
+msgstr ""
+"你真的要删除选中的%(objects_name)s?以下这些对象和他们相关的条目都会被删除："
+
+#: templates/admin/filter.html:3
+#, python-format
+msgid " By %(filter_title)s "
+msgstr "通过 %(filter_title)s "
+
+#: templates/admin/index.html:15
+#, python-format
+msgid "Models in the %(name)s application"
+msgstr "在%(name)s应用中的模型"
+
+#: templates/admin/index.html:16
+#, python-format
+msgid "%(name)s"
+msgstr "%(name)s"
+
+#: templates/admin/index.html:34 templates/note/note_detail.html:22
+#: templates/note/note_list_page.html:14
+#: templates/weixin/weixinmp_detail.html:24
+#: templates/weixin/weixinmp_list.html:31
+msgid "Change"
+msgstr "修改"
+
+#: templates/admin/index.html:45
+msgid "You don't have permission to edit anything."
+msgstr "你没有修改任何东西的权限。"
+
+#: templates/admin/index.html:53
+msgid "My Actions"
+msgstr "我的动作"
+
+#: templates/admin/index.html:57
+msgid "None available"
+msgstr "没有可用的"
+
+#: templates/admin/index.html:70
+msgid "Unknown content"
+msgstr "未知的内容"
+
+#: templates/admin/invalid_setup.html:12
+msgid ""
+"Something's wrong with your database installation. Make sure the appropriate "
+"database tables have been created, and make sure the database is readable by "
+"the appropriate user."
+msgstr ""
+"你的数据库安装出了一些问题。确保合适的数据库表已经创建，同时可被用户访问。"
+
+#: templates/admin/login.html:43 templates/registration/login.html:44
+msgid "Password:"
+msgstr "密码"
+
+#: templates/admin/login.html:53 templates/registration/login.html:54
+msgid "Forgotten your password or username?"
+msgstr "忘记密码或者用户名？"
+
+#: templates/admin/object_history.html:21
+msgid "Date/time"
+msgstr "日期/时间"
+
+#: templates/admin/object_history.html:22 templates/feedfish/index.html:14
+msgid "User"
+msgstr "用户"
+
+#: templates/admin/object_history.html:23 templates/feedfish/index.html:15
+msgid "Action"
+msgstr "动作"
+
+#: templates/admin/object_history.html:37
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr "这个对象没有修改历史。它可能不是通过管理界面加入的。"
+
+#: templates/admin/pagination.html:10
+msgid "Show all"
+msgstr "显示全部"
+
+#: templates/admin/search_form.html:12
+#, python-format
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] "%(counter)s 个结果"
+msgstr[1] "%(counter)s 个结果"
+
+#: templates/admin/search_form.html:12
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr "共 %(full_result_count)s"
+
+#: templates/admin/submit_line.html:4
+msgid "Save as new"
+msgstr "另存为新的对象"
+
+#: templates/admin/submit_line.html:5
+msgid "Save and add another"
+msgstr "保存并增加另一个"
+
+#: templates/admin/submit_line.html:6
+msgid "Save and continue editing"
+msgstr "保存并继续编辑"
+
+#: templates/admin/auth/user/add_form.html:6
+msgid ""
+"First, enter a username and password. Then, you'll be able to edit more user "
+"options."
+msgstr "首先，输入账户密码。然后，你就可以编辑更多用户选项了。"
+
+#: templates/admin/auth/user/add_form.html:8
+msgid "Enter a username and password."
+msgstr "输入用户名和密码。"
+
+#: templates/admin/auth/user/change_password.html:31
+#, python-format
+msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr "输入<strong>%(username)s</strong>的新密码。"
+
+#: templates/admin/auth/user/change_password.html:44
+msgid "Password (again)"
+msgstr "密码（再输一次）"
+
+#: templates/admin/auth/user/change_password.html:45
+msgid "Enter the same password as above, for verification."
+msgstr "为了验证，输入与上面相同的密码。"
+
+#: templates/admin/edit_inline/stacked.html:26
+#: templates/admin/edit_inline/tabular.html:70
+msgid "Remove"
+msgstr "删除"
+
+#: templates/admin/edit_inline/stacked.html:27
+#: templates/admin/edit_inline/tabular.html:69
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr "添加另一个 %(verbose_name)s"
+
+#: templates/admin/edit_inline/tabular.html:14
+msgid "Delete?"
+msgstr "删除？"
+
+#: templates/admin/reminder/rmv_add_form.html:6
+msgid "Get Validate Code"
+msgstr "获取验证码"
+
+#: templates/backends/event_list.html:3 templates/backends/event_list.html:7
+msgid "Timeline"
+msgstr "时间线"
+
+#: templates/backends/event_list_page.html:16
+msgid "More"
+msgstr "更多"
+
+#: templates/backends/event_list_page.html:25
+msgid "Nothing yet."
+msgstr "现在还什么也没有"
+
+#: templates/endless/show_more.html:5
+msgid "more"
+msgstr "更多"
+
+#: templates/feedfish/index.html:3
+msgid "FeedFish - Ninan"
+msgstr "喂鱼 - 呢喃"
+
+#: templates/feedfish/index.html:16
+msgid "Last Feed Time"
+msgstr "上次喂食时间"
+
+#: templates/feedfish/index.html:17
+msgid "Fish status"
+msgstr "鱼鱼状况"
+
+#: templates/feedfish/index.html:18
+msgid "Fish amount"
+msgstr "鱼鱼数量"
+
+#: templates/feedfish/index.html:20
+msgid "Photo"
+msgstr "照片"
+
+#: templates/feedfish/index.html:28
+msgid "Not feed."
+msgstr "没有喂鱼"
+
+#: templates/feedfish/index.html:41
+msgid "Click to see photo of fishes"
+msgstr "点击查看小鱼鱼的照片"
+
+#: templates/feedfish/index.html:52
+msgid ""
+"Hint: If you are visiting on a mobile device, press and slide to show full "
+"table"
+msgstr ""
+"提示： 如果您正在使用移动设备查看本页， 请在表格内按住以拖动来查看全部表格"
+
+#: templates/kvdb/upload.html:3 templates/kvdb/upload.html.py:6
+msgid "KVDB file upload"
+msgstr "KVDB文件上传"
+
+#: templates/kvdb/upload.html:9
+msgid "File"
+msgstr "文件"
+
+#: templates/milestone/index.html:4
+msgid "Milestone - Ninan"
+msgstr "里程碑 - 呢喃"
+
+#: templates/milestone/index.html:8
+msgid "Frown upon why it is so hard to hold on losing weight?"
+msgstr "是否为减肥坚持不住而愁眉不展？"
+
+#: templates/milestone/index.html:9
+msgid "Suck in endless anxiety when trying to remeber the new word?"
+msgstr "是否为背单词而焦躁不已？"
+
+#: templates/milestone/index.html:10
+msgid "Do not panic."
+msgstr "不要慌。"
+
+#: templates/milestone/index.html:11
+msgid "Now you have newly banded `Milestone` app from Ninan."
+msgstr "现在，有了新发布的呢喃应用`里程碑`"
+
+#: templates/milestone/index.html:13
+msgid ""
+"&gt;&gt; Or you just <a href=\"/milestone/random/\">want a look at what "
+"others doing...</a>"
+msgstr ">> 或者<a href=\"/milestone/random/\"> 随便看看……</a>"
+
+#: templates/milestone/milestone_list.html:3
+#, python-format
+msgid "Milestones of %(uname)s"
+msgstr "%(uname)s的里程碑"
+
+#: templates/milestone/milestone_list.html:7
+#: templates/milestone/milestone_list.html:28
+#, python-format
+msgid "%(uname)s's milestone"
+msgstr "%(uname)s的里程碑"
+
+#: templates/milestone/milestone_list.html:12
+msgid "Milestones:"
+msgstr "里程碑"
+
+#: templates/milestone/milestone_list.html:16
+msgid "Things:"
+msgstr "事件"
+
+#: templates/milestone/milestone_list.html:20
+msgid "Total scores:"
+msgstr "总积分"
+
+#: templates/milestone/milestone_list.html:34
+msgid "Name"
+msgstr "名称"
+
+#: templates/milestone/milestone_list.html:35
+msgid "Progress"
+msgstr "进度"
+
+#: templates/milestone/milestone_list.html:36
+msgid "Status"
+msgstr "状态"
+
+#: templates/milestone/milestone_list.html:37
+msgid "Started At"
+msgstr "开始于"
+
+#: templates/milestone/milestone_list.html:45
+msgid "click to show detail"
+msgstr "点击显示明细"
+
+#: templates/milestone/stone_detail.html:3
+msgid "Milestone Detail"
+msgstr "里程碑明细"
+
+#: templates/milestone/stone_detail.html:15
+msgid "Thing Name"
+msgstr "事件名称"
+
+#: templates/milestone/stone_detail.html:16
+msgid "Thing Score"
+msgstr "事件积分"
+
+#: templates/milestone/stone_detail.html:31
+msgid "Total score"
+msgstr "总积分"
+
+#: templates/note/_pagination.html:7 templates/note/note_detail.html:53
+#: templates/weixin/weixinmp_detail.html:42
+msgid "Previous"
+msgstr "上一个"
+
+#: templates/note/_pagination.html:15 templates/note/note_detail.html:58
+#: templates/weixin/weixinmp_detail.html:47
+msgid "Next"
+msgstr "下一个"
+
+#: templates/note/note_detail.html:15 templates/note/note_list_page.html:7
+#: templates/weixin/weixinmp_list.html:26
+msgid "Private"
+msgstr "私有"
+
+#: templates/note/note_detail.html:17 templates/note/note_list_page.html:9
+#: templates/weixin/weixinmp_detail.html:22
+#: templates/weixin/weixinmp_list.html:28
+msgid "Author"
+msgstr "作者"
+
+#: templates/note/note_detail.html:19
+msgid "Reads"
+msgstr "阅读"
+
+#: templates/note/note_detail.html:20
+msgid "Comments"
+msgstr "评论"
+
+#: templates/note/note_detail.html:34 templates/note/note_list_page.html:27
+#: templates/note/note_sidebar.html:5 templates/weixin/weixinmp_list.html:44
+msgid "Category"
+msgstr "分类"
+
+#: templates/note/note_list.html:14 templates/weixin/weixinmp_list.html:19
+msgid "No Objects yet in this item. "
+msgstr "这个条目下没有对象"
+
+#: templates/note/note_list.html:15 templates/weixin/weixinmp_list.html:20
+msgid "We are sorry, but there is no objects in this item. "
+msgstr "很抱歉，这个条目下没有对象。"
+
+#: templates/note/note_list.html:16 templates/weixin/weixinmp_list.html:21
+msgid "Back"
+msgstr "返回"
+
+#: templates/note/note_list_page.html:11
+msgid "reads"
+msgstr "阅读"
+
+#: templates/note/note_list_page.html:12
+msgid "comments"
+msgstr "评论"
+
+#: templates/note/note_list_page.html:20
+#: templates/weixin/weixinmp_list.html:37
+msgid "Read full content"
+msgstr "阅读全文"
+
+#: templates/note/note_sidebar.html:21
+msgid "Archive"
+msgstr "归档"
+
+#: templates/provider/authorize.html:5
+msgid "OAuth Confirmation"
+msgstr "OAuth确认"
+
+#: templates/provider/authorize.html:9
+msgid "Authorize Confirmation"
+msgstr "授权确认"
+
+#: templates/registration/logged_out.html:10
+msgid "Thanks for spending some quality time with the Web site today."
+msgstr "感谢你今天在本网站上花费了一些时间。"
+
+#: templates/registration/logged_out.html:12
+msgid "Log in again"
+msgstr "重新登录"
+
+#: templates/reminder/index.html:4
+msgid "Reminder - Ninan"
+msgstr "提醒 - 呢喃"
+
+#: templates/reminder/index.html:8
+msgid ""
+"Ninan Reminder is a remind solution based on web, aimed at provide remind "
+"service for you."
+msgstr "呢喃是一个基于web的提醒解决方案，旨在提供提醒服务。"
+
+#: templates/reminder/index.html:9
+msgid ""
+"You can custom reminder on every day, every week, peculiar day(s) of a week, "
+"or on workdays (Chinese)."
+msgstr "你可以定制每天提醒，每周提醒，每周几提醒或者工作日提醒。"
+
+#: templates/reminder/index.html:10
+msgid "We are in phase beta, so just provide QQ mail remind."
+msgstr "现在还处于beta阶段，所以只支持QQ邮件提醒。"
+
+#: templates/reminder/index.html:11
+msgid "Any problem, please"
+msgstr "如有任何问题，请"
+
+#: templates/search/search.html:7
+msgid "No results found."
+msgstr "没有符合条件的结果。"
+
+#: templates/weixin/weixinmp_detail.html:9
+msgid "Weixin QRCode"
+msgstr "微信二维码"
+
+#: templates/weixin/weixinmp_detail.html:11
+msgid "Span to subscribe XIAOYU_NINAN"
+msgstr "扫描关注`欢声小彧`"
+
+#: templates/weixin/weixinmp_list.html:5 weixin/genericviews/list.py:23
+msgid "Weixin Article List"
+msgstr "微信文章列表"
+
+#: templates/weixin/weixinmp_list.html:11
+msgid "QRCode for ninan_weixin in wechat app"
+msgstr "欢声小彧的微信二维码"
+
+#: templates/weixin/weixinmp_list.html:12
+msgid "Scan QRCode from wechat app and subscribe ninan_weixin"
+msgstr "用微信扫描二维码订阅欢声小彧"
+
+#: utils/model_utils.py:53
+msgid "created"
+msgstr "创建时间"
+
+#: utils/model_utils.py:54
+msgid "modified"
+msgstr "修改时间"
+
+#: utils/model_utils.py:55
+msgid "is_valid"
+msgstr "有效"
+
+#: utils/model_utils.py:56
+msgid "is_private"
+msgstr "私有"
+
+#: utils/model_utils.py:66
+msgid "Created Time"
+msgstr "创建时间"
+
+#: weixin/models.py:29
+msgid "digest"
+msgstr "摘要"
+
+#: weixin/models.py:31
+msgid "author"
+msgstr "作者"
+
+#: weixin/models.py:32
+msgid "fileid"
+msgstr "文件ID"
+
+#: weixin/models.py:33
+msgid "show cover image"
+msgstr "显示封面图片"
+
+#: weixin/models.py:36
+msgid "Cover Image"
+msgstr "封面图片"
+
+#: weixin/models.py:39
+msgid ""
+"Cover Image for article, will be set to `uploads/cover.jpg` if left blank."
+msgstr "文章封面图片。留空将会被设置为`uploads/cover.jpg`。"
+
+#: weixin/models.py:44
+msgid "is_published"
+msgstr "是否已发布"
+
+#: weixin/models.py:45
+msgid "Sync"
+msgstr "同步到微信"
+
+#: weixin/models.py:46
+msgid "Synchronize to weixin server."
+msgstr "同步到微信服务器"
+
+#: weixin/models.py:51
+msgid "weinxin_article"
+msgstr "微信文章"
+
+#: weixin/models.py:52
+msgid "weixin_articles"
+msgstr "微信文章"
+
+#: weixin/models.py:65
+#, python-format
+msgid "wrote a new wechat article : %(title)s"
+msgstr "写了新的微信文章: %(title)s"
+
+#: weixin/models.py:109
+msgid "Message for user subscribe"
+msgstr "订阅消息"
+
+#: weixin/models.py:110
+msgid "Usage for express"
+msgstr "快递使用帮助"
+
+#: weixin/models.py:111
+msgid "Usage for commen"
+msgstr "通用帮助"
+
+#: weixin/models.py:117
+msgid "trigger type"
+msgstr "关键字类型"
+
+#: weixin/models.py:124
+msgid "weixin_config"
+msgstr "微信配置"
+
+#: weixin/models.py:125
+msgid "weixin_configs"
+msgstr "微信配置"
+
+#: weixin/models.py:133
+msgid "trigger keyword partly match"
+msgstr "关键字部分匹配"
+
+#: weixin/models.py:134
+msgid "trigger keyword entirely match"
+msgstr "关键字全部匹配"
+
+#: weixin/models.py:140
+msgid "Keyword"
+msgstr "关键字"
+
+#: weixin/models.py:144
+msgid "match_type"
+msgstr "匹配类型"
+
+#: weixin/models.py:149
+msgid "weixin_reply"
+msgstr "微信回复设置"
+
+#: weixin/models.py:150
+msgid "weixin_replies"
+msgstr "微信回复设置"
+
+#: weixin/models.py:159
+msgid "last article id"
+msgstr "最近的微信文章ID"
+
+#: weixin/models.py:161
+msgid "unpublished article id"
+msgstr "尚未推送的微信文章ID"
+
+#: weixin/models.py:164 weixin/models.py:165
+msgid "weixin_global_config"
+msgstr "微信全局配置"
+
+#: weixin/models.py:174
+msgid "fake_id"
+msgstr "虚ID"
+
+#: weixin/models.py:176
+msgid "openid"
+msgstr "开放ID"
+
+#: weixin/models.py:179
+msgid "last msg send time"
+msgstr "上次消息发送时间"
+
+#: weixin/models.py:182
+msgid "weixin_user"
+msgstr "微信用户"
+
+#: weixin/models.py:183
+msgid "weixin_users"
+msgstr "微信用户"
+
+#: weixin/genericviews/base.py:101
+#, python-format
+msgid "Sorry but your input [%(type)s: %(msg)s] is not valid."
+msgstr "抱歉您的输入[%(type)s: %(msg)s]无法被识别"
+
+#: weixin/genericviews/list.py:33
+#, python-format
+msgid "Weixin articls created by %(author)s"
+msgstr "%(author)s 创建的微信文章"
+
+#: weixin/genericviews/list.py:51
+#, python-format
+msgid "Weixin articls created in %(year)s - %(month)s "
+msgstr "%(year)s年%(month)s月创建的微信文章"
+
+#: xlink/admin.py:25
+msgid "Record time."
+msgstr "记录时间"
+
+#: xlink/admin.py:37
+msgid "expire time."
+msgstr "验证码过期时间"
+
+#: xlink/models.py:19
+msgid "Switch"
+msgstr "开关"
+
+#: xlink/models.py:20
+msgid "Temperature Sensor"
+msgstr "温度传感器"
+
+#: xlink/models.py:25
+msgid "degree Celsius"
+msgstr "摄氏度"
+
+#: xlink/models.py:26
+msgid "degree Fahrenheit"
+msgstr "华氏度"
+
+#: xlink/models.py:27
+msgid "meter"
+msgstr "米"
+
+#: xlink/models.py:28
+msgid "on or off"
+msgstr "开或关"
+
+#: xlink/models.py:36
+msgid "show to public"
+msgstr "向公众公开此设备"
+
+#: xlink/models.py:42
+msgid "device"
+msgstr "设备"
+
+#: xlink/models.py:43
+msgid "devices"
+msgstr "设备"
+
+#: xlink/models.py:49
+msgid "sensor type"
+msgstr "传感器类型"
+
+#: xlink/models.py:54
+msgid "unit"
+msgstr "单位"
+
+#: xlink/models.py:61
+msgid "sensor"
+msgstr "传感器"
+
+#: xlink/models.py:62
+msgid "sensors"
+msgstr "传感器"
+
+#: xlink/models.py:81
+msgid "value"
+msgstr "值"
+
+#: xlink/models.py:82
+msgid "time happened"
+msgstr "发生时间"
+
+#: xlink/models.py:86
+msgid "datapoint"
+msgstr "数据点"
+
+#: xlink/models.py:87
+msgid "datapoints"
+msgstr "数据点"
+
+#: xlink/models.py:99 xlink/models.py:104
+msgid "command"
+msgstr "命令"
+
+#: xlink/models.py:100
+msgid "expire time"
+msgstr "验证码过期时间"
+
+#: xlink/models.py:105
+msgid "commands"
+msgstr "命令"
+
+#~ msgid ""
+#~ "Now it's in phase beta. And of course , many features are still under "
+#~ "construction."
+#~ msgstr "现在处在beta阶段。当然，许多功能还没有实现。"
+
+#~ msgid "read_times"
+#~ msgstr "阅读次数"
+
+#~ msgid "New Comments from Ninan"
+#~ msgstr "呢喃上的新评论"
+
+#~ msgid ""
+#~ "%(user)s has posted a comment to your comment : %(comment_content)s ."
+#~ msgstr "%(user)s 对您的评论进行了回复 : %(comment_content)s ."
+
+#~ msgid "Feed Comment"
+#~ msgstr "订阅评论"
+
+#~ msgid "Required. Will not be published."
+#~ msgstr "必需。不会被公开。"
+
+#~ msgid "Your site"
+#~ msgstr "您的站点"
+
+#~ msgid "Post"
+#~ msgstr "发布"
+
+#~ msgid "Preview"
+#~ msgstr "预览"
+
+#~ msgid "Thanks for commenting"
+#~ msgstr "感谢您的评论"
+
+#~ msgid "Thank you for your comment"
+#~ msgstr "谢谢您的评论"
+
+#~ msgid "Redirect to the previous page in 2 seconds."
+#~ msgstr "2秒内返回您之前浏览的网页。"
+
+#~ msgid "Preview your comment"
+#~ msgstr "预览您的评论"
+
+#~ msgid "Please correct the error below"
+#~ msgid_plural "Please correct the errors below"
+#~ msgstr[0] "请更正如下的错误"
+#~ msgstr[1] "请更正如下的错误"
+
+#~ msgid "then"
+#~ msgstr "然后"
+
+#~ msgid "Post your comment"
+#~ msgstr "发布你的评论"
+
+#~ msgid "or make changes"
+#~ msgstr "或者做一下修改"
+
+#~ msgid "Add comment"
+#~ msgstr "添加评论"
+
+#~ msgid "Feed comment"
+#~ msgstr "订阅评论"
+
+#~ msgid "says"
+#~ msgstr "说"
+
+#~ msgid "Reply"
+#~ msgstr "回复"
+
+#~ msgid "Weixin"
+#~ msgstr "微信"
+
+#~ msgid ""
+#~ "Want to buy yourself a new iPhone ? Started from <a\n"
+#~ "        href=\"/%(AMD_ROOT)s/milestone/\">milestone</a>"
+#~ msgstr ""
+#~ "想给自己买iPhone？从<a href=\"/%(AMD_ROOT)s/milestone/\">里程碑</a>开始"
+#~ "吧！"
+
+#~ msgid "KVDB Admin"
+#~ msgstr "KVDB管理"
+
+#~ msgid "Chat with XRobot"
+#~ msgstr "与机器人聊天！"
+
+#~ msgid " Chat With XRobot! "
+#~ msgstr "与机器人聊天！"
+
+#~ msgid "Hi."
+#~ msgstr "你好."
+
+#~ msgid "Say something"
+#~ msgstr "说点什么"
+
+#~ msgid "Question"
+#~ msgstr "提问"
+
+#~ msgid "Answer"
+#~ msgstr "回答"
+
+#~ msgid "Training Me !"
+#~ msgstr "训练我"
+
+#~ msgid "Thank you for training."
+#~ msgstr "谢谢您的训练"
+
+#~ msgid "Only superuser can train me."
+#~ msgstr "只有超级用户可以训练我"
+
+#~ msgid " SAE KVDB Admin "
+#~ msgstr "KVDB管理"
+
+#~ msgid "KVDB Summary"
+#~ msgstr "KVDB概况"
+
+#~ msgid " SAE KVDB Admin  "
+#~ msgstr "KVDB管理"
+
+#~ msgid "Export KVDB Data"
+#~ msgstr "导出KVDB数据"
+
+#~ msgid "Prefix"
+#~ msgstr "前缀"
+
+#~ msgid "Limit"
+#~ msgstr "限制"
+
+#~ msgid "Limit 10"
+#~ msgstr "限制 10"
+
+#~ msgid "Get KV data"
+#~ msgstr "获取KV数据"
+
+#~ msgid "Key"
+#~ msgstr "键"
+
+#~ msgid "Add new value to key. If key exsits, value will not be changed."
+#~ msgstr "添加新的键值。如果键已经存在，值将不会被添加。"
+
+#~ msgid "Previous Page"
+#~ msgstr "上一页"
+
+#~ msgid "Next Page"
+#~ msgstr "下一页"
+
+#~ msgid "Format"
+#~ msgstr "格式"
+
+#~ msgid "Limit 100"
+#~ msgstr "限制 100"
+
+#~ msgid "Confirm"
+#~ msgstr "确定"
+
+#~ msgid "Del"
+#~ msgstr "删除"
+
+#~ msgid "Are you sure to delete "
+#~ msgstr "确定要删除"
+
+#~ msgid "Emmm, I don't know how to answer your question."
+#~ msgstr "呃，我还没有学会怎么回答你的问题"
+
+#~ msgid "socre"
+#~ msgstr "积分"
+
+#~ msgid "Weixin Artcile"
+#~ msgstr "微信文章列表"
+
+#~ msgid "Documentation"
+#~ msgstr "文档"
+
+#~ msgid "Click to see photo of fishes."
+#~ msgstr "点击查看小鱼鱼的照片"
+
+#~ msgid "GET method was not allowed."
+#~ msgstr "不允许使用GET方法提交数据。"
+
+#~ msgid "Is_valid"
+#~ msgstr "有效"
+
+#~ msgid "Date created"
+#~ msgstr "创建时间"
+
+#~ msgid "time_created"
+#~ msgstr "创建时间"
+
+#~ msgid "Export KV data"
+#~ msgstr "导出KVDB数据"
+
+#~ msgid "English"
+#~ msgstr "英语"
+
+#~ msgid "Simplified Chinese"
+#~ msgstr "简体中文"
+
+#~ msgid "Not a valid artcile count"
+#~ msgstr "不是一个有效的文章数量"
+
+#~ msgid "image"
+#~ msgstr "图片"
+
+#~ msgid "Remind by China Mobile's Fetion."
+#~ msgstr "通过移动飞信提醒"
+
+#~ msgid "Documentation bookmarklets"
+#~ msgstr "文档书签"
+
+#~ msgid "Documentation for this page"
+#~ msgstr "文档"
+
+#~ msgid "Filters"
+#~ msgstr "过滤器"
+
+#, fuzzy
+#~ msgid "reminde-method"
+#~ msgstr "提醒方法"
+
+#~ msgid "About - Ninan"
+#~ msgstr "关于 - 呢喃"

@@ -1,0 +1,52 @@
+﻿{% extends "base.html" %}
+{% load i18n staticfiles %}
+{% load ninan_extras %}
+{% block title%}{{ note.title }}{% endblock%}
+{% block sidebar %}
+<div class="nn-sidebar visible-lg">
+    <ul class="nav sidenav">
+        <li>
+            <a href="javascript:void(0)">{% trans "Weixin QRCode" %}</a>
+            <ul class="nav">
+                <li><img class="img-rounded" src="{% static 'img/qr.jpg' %}" alt="{% trans "Span to subscribe XIAOYU_NINAN"%}" /></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="nn-note-section">
+    <div class="page-header"><h2>{{ note.title }}</h2></div>
+    <div class="row">
+        <div class="col-md-2"><span>{% trans "Author" %} : <a href="{% url 'weixinauthorview' note.user.username %}">{{ note.user }}</a></span></div>
+        {% ifequal user.id note.user.id %}
+        <div class="col-md-1 col-md-offset-8"><span><a href="{% url 'admin:weixin_weixinmp_change' note.id %}">{% trans "Change" %}</a></span></div>
+        <div class="col-md-1"><span><a href="{% url 'admin:weixin_weixinmp_delete' note.id %}">{% trans "Delete" %}</a></span></div>
+        {% endifequal %}
+    </div>
+    <div class="nn-note-cover-img">
+        <hr />
+        <img class="img-rounded" src="{{ note.cover_img.url }}" />
+    </div>
+    <div class="nn-note-content">
+        <hr />
+        {{ note.content|safe }}
+        <hr />
+    </div>
+</div>
+<div class="nn-note-footer">
+    <ul class="pager">
+    {% if previous_note %}
+        <li class="previous">
+            <a href="{{ previous_note.get_absolute_url }}">{% trans "Previous" %} : {{ previous_note.title }}</a>
+        </li>
+    {% endif %}
+    {% if next_note %}
+        <li class="next">
+            <a href="{{ next_note.get_absolute_url }}">{% trans "Next" %} : {{ next_note.title }}</a>
+        </li>
+    {% endif %}
+    </ul>
+</div>
+{% endblock %}

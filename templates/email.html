@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block content %}
+<div class="nn-note-section">
+    <div class="page-header"><h3>{% trans "Add an Email" %}</h3></div>
+    <form class="form-inline" role="form" action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="sr-only" for="email">{% trans "Email address"%}</label>
+            <input type="email" class="form-control" id="email" placeholder="{% trans 'Enter email'%}" name="email" />
+        </div>
+        <button type="submit" class="btn btn-default">{% trans "Save" %}
+            </button>
+    </form>
+</div>
+{% endblock %}

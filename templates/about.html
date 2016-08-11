@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+{% load i18n staticfiles %}
+{% block title %}{% trans "About" %}{% endblock %}
+{% block content %}
+<div class="nn-note-section">
+    <div class="page-header"><h3>{% trans "About" %}</h3></div>
+    <p>{% trans "Ninan is a project deployed at SAE, written in Python and Django." %}</p>
+    <p>{% blocktrans %}We readlly appreciate <a href="https://www.djangoproject.com/" target="_blank">Django</a>, <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>, <a href="http://sae.sina.com.cn/" target="_blank">SAE</a> and many other open-source project's wonderful products and with their supports to our project.{% endblocktrans %}</p>
+    <p>{% blocktrans %}Also thanks to the CDN service of <a href="http://www.qiniu.com/" target="_blank">QiNiu</a>.{% endblocktrans %}</p>
+    <p>{% trans "If you want to feedback, you can "%}<a href="/contact/" target="_blank">{% trans "contact us"%}.</a></p>
+    <p><a href="https://github.com/xkong" target="_blank"><img src="{% static 'img/github.png' %}">xiaoyu</a></p>
+</div>
+{% endblock %}

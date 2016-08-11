@@ -1,0 +1,78 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_static %}
+
+{% block breadcrumbs %}
+    <li><a href="{% url 'admin:index' %}">{% trans 'Admin Home' %}</a></li>
+{% endblock %}
+
+{% block content %}
+<div id="content-main">
+
+{% if app_list %}
+    {% for app in app_list %}
+        <div class="panel panel-success">
+            <div class="panel-heading">
+            <a href="{{ app.app_url }}" class="section" title="{% blocktrans with name=app.name %}Models in the {{ name }} application{% endblocktrans %}">
+                {% blocktrans with name=app.name %}{{ name }}{% endblocktrans %}
+            </a>
+            </div>
+            <ul class="list-group">
+        {% for model in app.models %}
+            {% if model.admin_url %}
+                <li class="list-group-item"><a href="{{ model.admin_url }}">{{ model.name }}</a>
+            {% else %}
+                <li class="list-group-item">{{ model.name }}
+            {% endif %}
+            <span class="pull-right">
+            {% if model.add_url %}
+                <a href="{{ model.add_url }}" class="addlink">{% trans 'Add' %}</a>
+            {% else %}
+                &nbsp;
+            {% endif %}
+
+            {% if model.admin_url %}
+                <a href="{{ model.admin_url }}" class="changelink">{% trans 'Change' %}</a>
+            {% else %}
+                &nbsp;
+            {% endif %}
+            </span>
+                </li>
+        {% endfor %}
+           </ul>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>{% trans "You don't have permission to edit anything." %}</p>
+{% endif %}
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div class="nn-sidebar hidden-print visible-lg" data-spy="affix">
+  <div class="panel panel-success">
+    <div class="panel-heading">{% trans 'My Actions' %}</div>
+        {% load log %}
+        {% get_admin_log 10 as admin_log for_user user %}
+        {% if not admin_log %}
+            <p>{% trans 'None available' %}</p>
+        {% else %}
+            <ul class="list-group">
+            {% for entry in admin_log %}
+            <li class="list-group-item {% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}">
+                {% if entry.is_deletion or not entry.get_admin_url %}
+                    {{ entry.object_repr|truncatechars:12 }}
+                {% else %}
+                    <a href="{{ entry.get_admin_url }}">{{ entry.object_repr|truncatechars:12 }}</a>
+                {% endif %}
+                {% if entry.content_type %}
+                    <span class="badge">{% filter capfirst %}{% trans entry.content_type.name %}{% endfilter %}</span>
+                {% else %}
+                    <span class="badge">{% trans 'Unknown content' %}</span>
+                {% endif %}
+            </li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+  </div>
+</div>
+{% endblock %}

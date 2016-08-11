@@ -1,0 +1,14 @@
+About
+==================
+
+这是在 SAE 上的个人博客 呢喃 （ninan.sinaapp.com) 的核心代码。
+在公开的过程中，移除了包含个人信息的各种配置信息和设置。应该是无法直接部署到SAE上的。
+使用了django 1.5，因此需要配合south使用。
+其他第三方库在site-packages文件夹中有。当然其中也有自己修改过的lib，不过现在记不清哪些改过了。
+全文搜索使用django-haystack 和 whoosh 和jieba分词。其中whoosh和jieba分词都小有改动，为了配合SAE的文件环境使用。
+Restful 使用的是django-tastypie。
+
+就酱。
+
+新的个人网站：
+http://www.xy1031.com

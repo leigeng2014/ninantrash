@@ -1,0 +1,44 @@
+{% load i18n %}
+{% load ninan_extras %}
+{% load endless %}
+{% lazy_paginate object_list %}
+{% for note in object_list %}
+<div class="nn-note-section">
+    <div class="page-header"><h4><a href="{{ note.get_absolute_url }}" class="note-title">{{ note.title }}{% if note.is_private %}({% trans "Private" %}){% endif %}</a></h4></div>
+    <div class="row" id="note-neck">
+        <div class="col-md-2"><span>{% trans "Author" %} : <a href="/{{ note | to_app_label }}/author/{{ note.user.username }}" class="note-author">{{ note.user }}</a></span></div>
+        <div class="col-md-3"><span><a href="/{{ note | to_app_label }}/{{ note.date_created.year }}/{{ note.date_created.month }}" class="note-date">{{ note.date_created|date:"Y-n-j H:i:s" }}</a></span></div>
+        <div class="col-md-2"><span class="badge">{{ note.hits }}</span><a href="{{ note.get_absolute_url }}">{% trans "reads" %}</a></div>
+        <div class="col-md-3"><span class="badge"><span class="cy_cmt_count" id="sourceId::{{ note.id }}"></span></span><a href="{{ note.get_absolute_url }}#SOHUCS">{% trans "comments"%}</a></div>
+        {% ifequal user.id note.user.id %}
+        <div class="col-md-1"><span><a href="/{{ AMD_ROOT }}/{{ note | to_app_label}}/{{ note | to_class_name | lower }}/{{ note.id}}/">{% trans "Change" %}</a></span></div>
+        <div class="col-md-1"><span><a href="/{{ AMD_ROOT }}/{{ note | to_app_label}}/{{ note | to_class_name | lower }}/{{ note.id}}/delete">{% trans "Delete" %}</a></span></div>
+        {% endifequal %}
+    </div>
+    <div class="nn-note-content">
+        <hr />
+        {{ note.get_description|striptags }}......<a href="{{ note.get_absolute_url }}">{% trans "Read full content" %}</a>
+    </div>
+    <div class="nn-note-content-footer" id="note-footer">
+        <br />
+        <div class="row">
+        {% if note.category %}
+            <div class="col-sm-4 category">
+                <span>{% trans "Category" %} : </span>
+                <a href="{{ note.category.get_absolute_url }}" class="note-category">{{ note.category.name }}</a>
+            </div>
+        {% endif %}
+            <div class="col-sm-8 tag">
+        {% if note.get_tags %}
+            {% trans "Tag" %} :
+            {% for tag in note.get_tags %}
+            &nbsp;&nbsp;&nbsp;<a href="/{{ note | to_app_label }}/tag/{{ tag.tag }}" class="note-tag">#{{ tag.tag }}</a>
+            {% endfor %}
+        {% endif %}
+            </div>
+        </div>
+        <hr />
+    </div>
+</div>
+{% endfor %}
+{% show_more %}

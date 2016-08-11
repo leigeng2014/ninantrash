@@ -1,0 +1,30 @@
+{% load i18n %}
+ <div class="nn-sidebar hidden-print visible-lg affix">
+    <ul class="nav sidenav" >
+        <li>
+            <a href="#col-cate" data-toggle="collapse">{% trans "Category"%}&nbsp;&nbsp;>></a>
+            <ul class="nav collapse" id="col-cate">
+                {% for cat in NOTE_CATS %}
+                <li><a href="{{ cat.cat.get_absolute_url }}">{{ cat.cat.name }}({{ cat.count }})</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li>
+            <a href="#col-tag" data-toggle="collapse">{% trans "Tag"%}&nbsp;&nbsp;>></a>
+            <ul class="nav collapse" id="col-tag">
+            {% for tag_dict in NOTE_TAGS %}
+                <li><a href="/note/tag/{{ tag_dict.tag.tag }}">{{ tag_dict.tag.tag }} ({{ tag_dict.count }})</a></li>
+            {% endfor %}
+            </ul>
+        </li>
+        <li>
+            <a href="#col-archive" data-toggle="collapse">{% trans "Archive"%}&nbsp;&nbsp;>></a>
+            <ul class="nav collapse" id="col-archive">
+            {% for year, month, count in NOTE_MONTHLIST %}
+                <li><a href="/note/{{ year }}/{{ month }}">{{ year }}-{{ month }}({{ count }})</a></li>
+            {% endfor %}
+            </ul>
+        </li>
+        <li>{% include "search.html" %}</li>
+    </ul>
+</div>

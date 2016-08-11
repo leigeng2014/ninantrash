@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n staticfiles %}
+{% block content %}
+<div class="nn-note-section">
+    <div class="page-header">
+        <h3>{% trans "Login" %}</h3>
+    </div>
+    {% include "social_backends.html" %}
+</div>
+{% endblock %}

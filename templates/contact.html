@@ -1,0 +1,33 @@
+{% extends "base.html"%}
+{% load i18n staticfiles %}
+{% block title %}{% trans "Contact Us" %}{% endblock %}
+{% block content %}
+<div class="nn-note-section">
+    <div class="page-header"><h3>{% trans "Contact Us" %}</h3></div>
+    <p>Email:b64decode('<span id="b64email">{{email}}</span>')</p>
+    <p>{% trans "Or Sina WeiBo" %}<a href="http://weibo.com/u/2754144037">  @小彧1537</a></p>
+    <small>({% trans "Em, we encoded the email using base64 to anti spam"%}……)</small>
+    <a href="javascript:void(0);" class="btn btn-default" onclick="onInsertEmailButton();" >{% trans "Click here to show email." %}</a>
+    <div id="div_email"></div>
+</div>
+{% endblock %}
+{% block extra_js %}    
+<script src="{% static 'js/utils.js' %}"></script>
+<script >
+var insert_email_clicked = false;
+function onInsertEmailButton()
+{
+    if ( insert_email_clicked == false){
+        var b=new Base64();
+        var email=b.decode($('#b64email').text());
+        var link='<a href="mailto:"'+email+'">'+email+'</a>'
+        $('#div_email').html(link);
+        $('#div_email').show();
+        insert_email_clicked = true;
+    }else{
+        $('#div_email').hide();
+        insert_email_clicked = false;
+    }
+}
+</script>
+{% endblock %}

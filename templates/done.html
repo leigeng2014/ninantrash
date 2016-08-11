@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load i18n %}
+
+{% block content %}
+<div class="nn-note-section">
+    <div class="page-header">
+        <h3>{% trans "Login success!" %}</h3>
+    </div>
+    <p>{% trans "You are logged in as " %}&nbsp;{{ user.username }}&nbsp;! (<a
+        href="/logout/">{% trans "Logout" %}</a>)</p>
+
+    <h3>{% trans "Associated" %}</h3>
+      <table class="table">
+    {% for assoc in backends.associated %}
+          <tr>
+            <td><strong>{{ assoc.provider }}</strong></td>
+            <td><form action="{% url 'social:disconnect_individual' assoc.provider assoc.id %}" method="post">{% csrf_token %}
+            <button class="btn btn-default">{% trans "Disconnect" %}</button>
+            </td>
+          </tr>
+    {% endfor %}
+      </table>
+
+    <h3>{% trans "Associate" %}</h3>
+    <hr >
+    <ul>
+      {% for name in backends.not_associated %}
+        <li>
+          <a href="{% url 'social:begin' name %}">{{ name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+</div>
+{% endblock %}

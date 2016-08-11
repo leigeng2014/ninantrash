@@ -1,0 +1,40 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_static %}
+{% block after_field_sets %}
+<div class="form-group" {{ after_field_sets_style }} id="div_get_ccp">
+    <div class="col-sm-offset-2 col-sm-10">
+        <input onclick="get_code();" name="_get_ccp" value="{% trans "Get Validate Code" %}" class="btn btn-primary form-control" id="get_ccp" />
+    </div>
+</div>
+<script>
+$(document).ready(
+    function(){
+        $('#submit_div').hide();
+        $('#form_div_code').hide();
+    }
+)
+function get_code(){
+    var form = $('#remindmethod_form');
+    $('#remindmethod_form').submit(
+        function(){
+            jQuery.ajax({
+                url:'../getcode/',
+                data: form.serialize(),
+                type: 'POST',
+                success:function(data){
+                    alert(data['msg']);
+                    if (data['code'] == 0){
+                        form.unbind('submit');
+                        $('#div_get_ccp').hide();
+                        $('#submit_div').show();
+                        $('#form_div_code').show();
+                    }
+                }
+            })
+            return false;
+        }
+    )
+    form.submit();
+}
+</script>
+{% endblock %}

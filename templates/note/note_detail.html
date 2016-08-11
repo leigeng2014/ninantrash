@@ -1,0 +1,75 @@
+﻿{% extends "base.html" %}
+{% load i18n staticfiles %}
+{% load ninan_extras %}
+{% block title%}{{ note.title }}{% endblock%}
+{% load cache %}
+{% cache 3600 sidebar %}
+{% block sidebar %}{% include 'note/note_sidebar.html' %}{% endblock %}
+{% endcache %}
+{% block extra_head %}
+<link href="{% static 'note/css/monokai_sublime.css' %}" rel="stylesheet">
+<link href="{% static 'note/css/note.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="nn-note-section">
+    <div class="page-header"><h1>{{ note.title }}{% if note.is_private %}({% trans "Private" %}){% endif%}</h1></div>
+    <div class="row">
+        <div class="col-md-2"><span>{% trans "Author" %} : <a href="/note/author/{{ note.user.username }}" class="note-author">{{ note.user }}</a></span></div>
+        <div class="col-md-3"><span><a href="/note/{{ note.date_created.year }}/{{ note.date_created.month }}" class="note-date">{{ note.date_created|date:"Y-n-j H:i:s" }}</a></span></div>
+        <div class="col-md-2"><span class="badge">{{ note.hits }}</span>{% trans "Reads" %}</div>
+        <div class="col-md-3"><span class="badge" id="changyan_count_unit"></span><a href="#SOHUCS" id="comments">{% trans "Comments" %}</a></div>
+        {% ifequal user.id note.user.id %}
+        <div class="col-md-1"><span><a href="{% url 'admin:note_note_change' note.id %}">{% trans "Change" %}</a></span></div>
+        <div class="col-md-1"><span><a href="{% url 'admin:note_note_delete' note.id %}">{% trans "Delete" %}</a></span></div>
+        {% endifequal %}
+    </div>
+    <div class="nn-note-content">
+        <hr />
+        {{ note.content|safe }}
+    </div>
+    <div class="nn-note-content-footer">
+        <br />
+        <div class="row">
+            <div class="col-sm-4 category">
+                <span>{% trans "Category" %} : </span>
+                <a href="{{ note.category.get_absolute_url }}">{{ note.category.name }}</a>
+            </div>
+            <div class="col-sm-8 tag">
+        {% if note.get_tags %}
+            {% trans "Tag" %} :
+            {% for tag in note.get_tags %}
+            &nbsp;&nbsp;&nbsp;<a href="/note/tag/{{ tag.tag }}">#{{ tag.tag }}</a>
+            {% endfor %}
+        {% endif %}
+            </div>
+        </div>
+        <hr />
+    </div>
+</div>
+<div class="nn-note-footer">
+    <ul class="pager">
+    {% if previous_note %}
+        <li class="previous">
+            <a href="{{ previous_note.get_absolute_url }}">{% trans "Previous" %} : {{ previous_note.title }}</a>
+        </li>
+    {% endif %}
+    {% if next_note %}
+        <li class="next">
+            <a href="{{ next_note.get_absolute_url }}">{% trans "Next" %} : {{ next_note.title }}</a>
+        </li>
+    {% endif %}
+    </ul>
+    <hr />
+</div>
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'note/js/highlight.pack.js' %}"></script>
+<script>
+$(document).ready(function(){
+    $("pre[class^='lang'], pre[class*='literal-block'], pre[class='prettyprint']").each(function(i, block){
+        hljs.highlightBlock(block);    
+    });
+    hljs.initHighlightingOnLoad();
+});
+</script>
+{% endblock %}

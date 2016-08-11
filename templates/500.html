@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Server Internal Error" %}{% endblock %}
+{% block content %}
+<div class="row">
+    <h3>{% trans "Em...." %}</h3>
+    <p>{% trans "Something goes wrong with the server. Don't panic. Our engineers are fixing the bugs." %}</p>
+    <p>{% trans "And the answer is 42. You are welcome." %}</p>
+</div>
+{% endblock %}

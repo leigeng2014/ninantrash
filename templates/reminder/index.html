@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block sidebar %}{% endblock %}
+{% block title %}{% blocktrans %}Reminder - Ninan{% endblocktrans %}{% endblock %}
+{% block content %}
+<div class="nn-note-section">
+    <div class="page-header"><h3>{% trans "Reminder" %}</h3></div>
+    <p>{% trans "Ninan Reminder is a remind solution based on web, aimed at provide remind service for you." %}</p>
+    <p>{% trans "You can custom reminder on every day, every week, peculiar day(s) of a week, or on workdays (Chinese)." %}</p>
+    <p>{% trans "We are in phase beta, so just provide QQ mail remind." %}</p>
+    <p>{% trans "Any problem, please" %}<a href="/contact/"> {% trans "Contact Us" %}</a></p>
+</div>
+{% endblock %}

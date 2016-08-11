@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><methodCall>
+    <methodName>weblogUpdates.extendedPing</methodName>
+    <params>
+        <param>
+            <value><string>{{title}}</string></value>
+        </param>
+        <param>
+            <value><string>http://ninan.sinaapp.com/note/</string></value>
+        </param>
+        <param>
+            <value><string>http://ninan.sinaapp.com{{abs_url}}</string></value>
+        </param>
+        <param>
+            <value><string>http://ninan.sinaapp.com/feeds/note/</string></value>
+        </param>
+    </params>
+</methodCall>

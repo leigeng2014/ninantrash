@@ -1,0 +1,14 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+    <li><a href="{% url 'admin:index' %}">{% trans 'Admin Home' %}</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="panel-body">
+<p>{% trans "Thanks for spending some quality time with the Web site today." %}</p>
+
+<p><a href="{% url 'admin:index' %}" class="btn btn-primary">{% trans 'Log in again' %}</a></p>
+</div>
+{% endblock %}

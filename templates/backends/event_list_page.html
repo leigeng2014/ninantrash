@@ -1,0 +1,26 @@
+{% load i18n staticfiles endless %}
+    {% if object_list %}
+	{% paginate object_list %}
+    {% for event in object_list %}
+    <div class="media">
+        <a href="{% url 'backends.list_by_user' event.user.username %}" class="pull-left">
+        {% with img=event.user.profile.avatar_thumb %}
+        <img class="media-object" src="{% if img %}{{ img.url }}{% else %}{% static 'img/avatar.gif' %}{% endif %}" alt="{{ event.user.username }}">
+        {% endwith %}
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">
+                <a href="{% url 'backends.list_by_user' event.user.username %}" class="event-author">{{ event.nickname }}</a>&nbsp;&nbsp;
+                <a href="{{ event.resource.url }}" class="event-resource">{{ event.resource.title }}</a></h4>
+            <p><small>{{ event.date_created }}</small></p>
+            <p class="nn-indent-2">{{ event.resource.description | striptags }}...<a href="{{ event.resource.url }}">{% trans "More" %}&gt;&gt;</a></p>
+            {% if event.resource.image_url %}
+            <p class="nn-indent-2"><img src="{{ event.resource.image_url }}" >
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+	{% show_more %}
+    {% else %}
+    <p>{% trans "Nothing yet." %}</p>
+    {% endif %}

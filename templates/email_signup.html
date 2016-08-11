@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load i18n %}
+
+{% block content %}
+<div class="nn-note-section">
+    <div class="page-header">
+        <h3>{% trans "Signup with email" %}</h3>
+    </div>
+<form action="{% url 'social:complete' "email" %}" method="post" role="form">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="email">{% trans "Email address" %}:</label>
+    <input id="email" type="email" name="email" value="" class="form-control" placeholder="{% trans 'Enter email' %}"/>
+  </div>
+
+  <div class="form-group">
+  <label for="password">{% trans "Password for this site" %}:</label>
+  <input id="password" type="password" name="password" value="" class="form-control" placeholder="{% trans 'Password' %}"/>
+  </div>
+
+  <div class="form-group">
+  <label for="fullname">{% trans "Full name" %}:</label>
+  <input id="fullname" type="text" name="fullname" value="" class="form-control" placeholder="{% trans 'Your full name' %}"/>
+  </div>
+
+  <button class="btn btn-default">{% trans "Signup" %}</button>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "base.html"%}
+{% load i18n staticfiles%}
+{% load ninan_extras %}
+{% block title %}
+{% if title %}{{ title }}{% else %}{% trans "Weixin Article List" %}{% endif %}
+{% endblock %}
+{% block sidebar %}
+<div class="nn-sidebar visible-lg">
+    <ul class="nav sidenav">
+        <li><img class="img-rounded" src="{% static 'img/qr.jpg' %}"
+        style="padding-left: 10px;" alt="{% trans 'QRCode for ninan_weixin in wechat app'%}"/></li>
+        <li><p style="padding-left: 10px;">{% trans "Scan QRCode from wechat app and subscribe ninan_weixin" %}</p></li>
+    </ul>
+</div>
+{% endblock %}
+{% block content %}
+{% if not object_list %}
+<div class="nn-note-section">
+    <div class="page-header"><h3>{% trans "No Objects yet in this item. " %}</h3></div>
+    <p>{% trans "We are sorry, but there is no objects in this item. " %}</p>
+    <a href="javascript:history.go(-1)" class="btn btn-default" >{% trans "Back"%}</a>
+</div>
+{% endif %}
+{% for note in object_list %}
+<div class="nn-note-section">
+    <div class="page-header"><h1><a href="{{ note.get_absolute_url }}">{{ note.title }}{% if note.is_private %}({% trans "Private" %}){% endif %}</a></h1></div>
+    <div class="row" id="note-neck">
+        <div class="col-md-2"><span>{% trans "Author" %} : <a href="/{{ note | to_app_label }}/author/{{ note.user.username }}">{{ note.user }}</a></span></div>
+        <div class="col-md-3"><span><a href="/{{ note | to_app_label }}/{{ note.date_created.year }}/{{ note.date_created.month }}">{{ note.date_created|date:"Y-n-j H:i:s" }}</a></span></div>
+        {% ifequal user.id note.user.id %}
+        <div class="col-md-1 col-md-offset-5"><span><a href="/{{ AMD_ROOT }}/{{ note | to_app_label}}/{{ note | to_class_name | lower }}/{{ note.id}}/">{% trans "Change" %}</a></span></div>
+        <div class="col-md-1"><span><a href="/{{ AMD_ROOT }}/{{ note | to_app_label}}/{{ note | to_class_name | lower }}/{{ note.id}}/delete">{% trans "Delete" %}</a></span></div>
+        {% endifequal %}
+    </div>
+    <div class="nn-note-content">
+        <hr />
+        {{ note.get_description|striptags }}......<a href="{{ note.get_absolute_url }}">{% trans "Read full content" %}</a>
+    </div>
+    <div class="nn-note-content-footer" id="note-footer">
+        <br />
+        <div class="row">
+        {% if note.category %}
+            <div class="col-sm-4">
+                <span>{% trans "Category" %} : </span>
+                <a href="{{ note.category.get_absolute_url }}">{{ note.category.name }}</a>
+            </div>
+        {% endif %}
+            <div class="col-sm-8">
+        {% if note.get_tags %}
+            {% trans "Tag" %} :
+            {% for tag in note.get_tags %}
+            &nbsp;&nbsp;&nbsp;<a href="/{{ note | to_app_label }}/tag/{{ tag.tag }}">#{{ tag.tag }}</a>
+            {% endfor %}
+        {% endif %}
+            </div>
+        </div>
+        <hr />
+    </div>
+</div>
+{% endfor %}
+{% include "note/_pagination.html"%}
+{% endblock %}

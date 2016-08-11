@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% blocktrans %}FeedFish - Ninan{% endblocktrans %}{% endblock %}
+{% block sidebar %}{% endblock %}
+{% block content %}
+<div class="nn-note-section">
+    <div class="panel panel-success">
+        <div class="panel-heading">{% trans "FeedFish" %}</div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>{% trans "User" %}</th>
+                            <th>{% trans "Action" %}</th>
+                            <th>{% trans "Last Feed Time"%}</th>
+                            <th>{% trans "Fish status"%}</th>
+                            <th>{% trans "Fish amount"%}</th>
+                            <th>{% trans "Remark" %}</th>
+                            <th>{% trans "Photo" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for feedfish in feedfishes %}
+                        <tr>
+                            <td>{{ feedfish.user.username }}</td>
+                            {% if not feedfish.is_valid %}
+                            <td>{% trans "Not feed." %}</td>
+                            {% else %}
+                            <td>{{ feedfish.get_action_display }}</td>
+                            {% endif %}
+                            <td>{{ feedfish.date_created }}</td>
+                            <td>{{ feedfish.get_fish_status_display }}</td>
+                            <td>{{ feedfish.fish_amount }}</td>
+                            <td>{{ feedfish.remark }}</td>
+                            <td>
+                            {% if feedfish.fish_photo %}
+                                <a data-toggle="modal" 
+                                   href="{% url 'fish_show_photo' pk=feedfish.id %}"
+                                   data-target="#modal-{{ feedfish.id }}">
+                                   {% trans "Click to see photo of fishes" %}
+                                </a>
+                            {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <p>{% trans "Hint: If you are visiting on a mobile device, press and slide to show full table" %}</p>
+        </div>
+    </div>
+    {% for feedfish in feedfishes %}
+        <div class="modal fade in" id="modal-{{ feedfish.id }}"></div>
+    {% endfor %}
+</div>
+{% endblock %}

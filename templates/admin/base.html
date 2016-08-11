@@ -1,0 +1,200 @@
+﻿{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="生活 趣味 科技 成长-呢喃，记录生活的点点滴滴 关于python的丝丝缕缕">
+    <meta name="author" content="54snapple">
+    <meta name="keywords" content="python 生活 趣味 科技 成长 ">
+    <meta name="Robots" content= "all">
+    <meta name="google-site-verification" content="dL68M0vB-wQzj8OoSwsnxSvJhdkI02kvchv9sdZWUc8" />
+    <meta name="baidu-site-verification" content="9fHmKIcUXu" />
+    <link rel="shortcut icon" href="http://7u2hkd.com1.z0.glb.clouddn.com/favicon.ico">
+    <title>{% block title %}{% trans "Ninan" %}{% endblock %}</title>
+    <link href="http://cdn.staticfile.org/twitter-bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/ninan.css' %}" rel="stylesheet">
+    {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
+    <script src="http://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    {% block extrastyle %}{% endblock %}
+    {% block extrahead %}
+    <script>
+    window.setTimeout(function () {$('#alert-box').alert('close');}, 5000);
+    </script>
+    {% endblock %}
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
+    <style>
+      .nn-sidebar{
+          margin-top: 0px;
+          padding-top: 0px;
+      }
+    </style>
+  </head>
+  <body {% block bodyparam %}{% endblock %} class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
+  {% if not is_popup %}
+    <header class="navbar navbar-inverse navbar-fixed-top" role="banner" id="header" >
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">{% trans "Ninan" %}</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">{% trans "Ninan" %}</a>
+        </div>
+        <nav class="collapse navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li><a href="/">{% trans "Home" %}</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">{% trans "Note" %}<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/note">{% trans "Home" %}</a></li>
+                    <li><a href="/note/author/{{ user.username }}">{% trans "My Notes "%}</a></li>
+                    {% if perms.note.add_note %}
+                    <li class="divider"></li>
+                    <li><a href="/sheffield/note/note/add/">{% trans "Add a Note "%}</a></li>
+                    {% endif %}
+                    {% if perms.note.change_note %}
+                    <li><a href="/sheffield/note/note/">{% trans "Change a Note "%}</a></li>
+                    {% endif %}
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">{% trans "Reminder" %}<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/reminder">{% trans "Home" %}</a></li>
+                    {% if perms.reminder.add_reminder %}
+                    <li class="divider"></li>
+                    <li><a href="/sheffield/reminder/reminder/">{% trans "My Reminder" %}</a></li>
+                    <li><a href="/sheffield/reminder/reminder/add/">{% trans "Add a Reminder" %}</a></li>
+                    {% endif %}
+                    {% if perms.reminder.add_remindmethod %}
+                    <li class="divider"></li>
+                    <li><a href="/sheffield/reminder/remindmethod/">{% trans "My RemindMethod" %}</a></li>
+                    <li><a href="/sheffield/reminder/remindmethod/add/">{% trans "Add a RemindMethod" %}</a></li>
+                    {% endif %}
+                </ul>
+            </li>
+            <li><a href="/feedfish">{% trans "Feed Fish" %}</a></li>
+        {% block breadcrumbs %}
+            {% if title %}<li><a href="#">{{ title }}{% trans 'Admin'%}</a></li>{% endif %}
+        {% endblock %}
+          </ul>
+          <form class="hidden" role="lang" action="{% url 'set_language'%}" method="post" id="language_form">
+              {% csrf_token %}
+              <input name="next" type="hidden" value="{{ redirect_to }}" />
+              <div class="form-group">
+              <select name="language" class="form-control" id="language_selecter">
+                  {% get_language_info_list for LANGUAGES as languages %}
+                  {% for language in languages %}
+                  <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected="selected"{% endif %}>
+                    {{ language.name_local }}({{ language.code}})
+                  </option>
+                  {% endfor %}
+              </select>
+              </div>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+              {% if user.is_active and user.is_staff %}
+              {% block userlinks %}
+              <li class="dropdown" id="lang_dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <strong>{% filter force_escape %}{% firstof user.get_short_name user.get_username %}{% endfilter %}</strong>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    {% if user.has_usable_password %}
+                    <li><a href="{% url 'admin:password_change' %}">{% trans "Change password"%}</a></li>
+                    {% endif %}
+                    {% get_language_info_list for LANGUAGES  as languages%}
+                    {% for language in languages %}
+                    <li><a href="#" class="lang_link" data-code="{{ language.code }}">{{ language.name_local }}({{ language.code}})</a></li>
+                    {% endfor %}
+                    <li><a href="{% url 'admin:logout' %}">{% trans "Log out"%}</a></li>
+                 </ul> 
+              </li>
+              {% endblock %}
+              {% endif %}
+              {% block nav-global %}{% endblock %}
+          </ul>
+        </nav><!--/.nav-collapse -->
+      </div>
+    </header>
+    {% endif %}
+    
+    <div class="container" style="margin-top: 60px;">
+
+        {% block messages %}
+        {% if messages %}
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="messagelist list-unstyled">{% for message in messages %}
+                    <li>
+                        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %} fade in" id="alert-box">
+                            <button class="close" aria-hidden="true" data-dismiss="alert" type="button">&times;</button>
+                            {{ message }}
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+        {% endblock messages %}
+    {% block container %}
+        <div class="row">
+            <div class="col-md-3">
+                {% block sidebar %}
+                <div class="nn-sidebar hidden-print visible-lg" data-spy="affix">
+                </div>
+                {% endblock %}
+            </div>
+            <div class="col-md-9">
+                <div class="panel panel-success">
+                    <div class="panel panel-heading">
+                        {% block content_title %}{{ title }}{% endblock %}
+                        {% block pretitle %}{% endblock %}
+                        {% block object-tools %}{% endblock %}
+                    </div>
+                    {% block content %}
+                      {{ content }}
+                    {% endblock %}
+               </div>
+            </div>
+         </div>
+    {% endblock %}
+    </div><!-- /.container -->
+    <!-- Footer   -->
+    <footer class="nn-footer">
+        <div class="container">
+            <p>54snapple &copy; 2014 </p>
+            <p>{% trans "Best viewed with "%} <a href="https://www.google.com/intl/zh-CN/chrome/browser/?hl=zh-CN" >Chrome</a> &amp; <a href="http://firefox.com.cn/">Firefox</a></p>
+            <li class="list-inline"><a href="http://ninan.sinaapp.com" class="footer-link" >ninan.sinaapp.com </a></li>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% block jquery %}<script src="http://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>{% endblock %}
+    <script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script>
+    $(function(){
+        $('#lang_dropdown li a.lang_link').click(function(){
+            $('#language_selecter').val($(this).data('code'));
+            $('#language_form').submit();
+        })
+    })
+    </script>
+    {% block extra_js %}
+    {% endblock %}
+
+  </body>
+</html>

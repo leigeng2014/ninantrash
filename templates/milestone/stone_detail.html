@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Milestone Detail" %}{% endblock %}
+{% block content %}
+<div class="nn-note-content">
+    <div class="page-header">
+        <h3>{{ stone.title }}</h3>
+    </div>
+    <p>{{ object.description | linebreaksbr }}</p>
+    {% if things %}
+    <table class="table">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>{% trans "Thing Name" %}</td>
+                <td>{% trans "Thing Score" %}</td>
+            </tr>
+        </thead>
+        <tbody>
+                {% for thing in things %}
+            <tr>
+                <td>{{ forloop.counter0 }}</td>
+                <td>{{ thing.name }}</td>
+                <td>{{ thing.score }}</td>
+            </tr>
+                {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td>{% trans "Total score" %}</td>
+                <td>{{ stone.current_score }}</td>
+            </tr>
+        </tfoot>
+    </table>
+    {% endif %}
+</div>
+{% endblock %}

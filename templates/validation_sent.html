@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block content %}
+<div class="nn-note-section">
+    <div class="page-header">
+        <h3>{% trans "Validation sent" %}</h3>
+    </div>
+    <p>{% trans "A email validation was sent to " %}{{ email }}.</p>
+</div>
+{% endblock %}

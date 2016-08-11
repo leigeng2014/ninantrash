@@ -1,0 +1,8 @@
+{% if show %}
+<ul class="list-inline">
+    {% if back %}<li><a href="{{ back.link }}"><span class="label label-info">&lsaquo; {{ back.title }}</span></a></li>{% endif %}
+{% for choice in choices %}
+<li> {% if choice.link %}<a href="{{ choice.link }}"><span class="label label-info">{% endif %}{{ choice.title }}{% if choice.link %}</span></a>{% endif %}</li>
+{% endfor %}
+</ul>
+{% endif %}

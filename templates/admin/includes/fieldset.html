@@ -1,0 +1,37 @@
+{% load ninan_extras %}    
+    {% if fieldset.name %}<h2>{{ fieldset.name }}</h2>{% endif %}
+    {% if fieldset.description %}
+        <div class="description">{{ fieldset.description|safe }}</div>
+    {% endif %}
+    {% for line in fieldset %}
+            {% if line.fields|length_is:'1' %}{{ line.errors }}{% endif %}
+            {% for field in line %}
+            <div class="form-group" id="form_div_{{ field.field.name }}">
+                    {% if not line.fields|length_is:'1' and not field.is_readonly %}{{ field.errors }}{% endif %}
+                    {% if field.is_checkbox %}
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="{{ field.field.name }}" {% if field.field.value %}checked="true"{% endif %}>{{ field.field.label }}
+                            </label>
+                        {% if field.field.help_text %}
+                            <span class="help-block">{{ field.field.help_text|safe }}</span>
+                        {% endif %}
+                        </div>
+                    </div>
+                    {% else %}
+                    <label for="{{ field.field.id_for_label }}" class="col-sm-2 control-label">{{ field.field.label }}</label>
+                    <div class="col-sm-10">
+                        {% if field.is_readonly %}
+                            <p>{{ field.contents|linebreaksbr }}</p>
+                        {% else %}
+                            {{ field.field | addcss:'form-control' }}
+                        {% endif %}
+                        {% if field.field.help_text %}
+                            <span class="help-block">{{ field.field.help_text|safe }}</span>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+    {% endfor %}

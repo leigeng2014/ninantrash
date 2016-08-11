@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+{% load i18n staticfiles %}
+{% load ninan_extras %}
+{% block title %}
+{% if title %}{{ title }}{% else %}{% trans "Note List" %}{% endif %}
+{% endblock %}
+{% load cache %}
+{% cache 3600 sidebar %}
+{% block sidebar %}{% include "note/note_sidebar.html" %}{% endblock %}
+{% endcache %}
+{% block content %}
+{% if not object_list %}
+<div class="nn-note-section">
+    <div class="page-header"><h3>{% trans "No Objects yet in this item. " %}</h3></div>
+    <p>{% trans "We are sorry, but there is no objects in this item. " %}</p>
+    <a href="javascript:history.go(-1)" class="btn btn-default" >{% trans "Back"%}</a>
+</div>
+{% endif %}
+{% include 'note/note_list_page.html' %}
+{% endblock %}
+{% block extra_js %}
+    <script src="{% static 'endless_pagination/js/endless-pagination.js' %}"></script>
+    <script>
+	$.endlessPaginate({
+		paginateOnScroll: true,
+        paginateOnScrollChunkSize: 5});
+	</script>
+{% endblock %}

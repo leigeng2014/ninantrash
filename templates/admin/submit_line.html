@@ -1,0 +1,8 @@
+{% load i18n admin_urls %}
+<div class="btn-group pull-right" id="submit_div">
+{% if show_delete_link %}<a href="{% url opts|admin_urlname:'delete' original.pk|admin_urlquote %}" class="btn btn-danger deletelink">&times;{% trans "Delete" %}</a>{% endif %}
+{% if show_save_as_new %}<button type="submit" name="_saveasnew" class="btn btn-primary" {{ onclick_attrib }}>{% trans 'Save as new' %}</button>{%endif%}
+{% if show_save_and_add_another %}<button type="submit" name="_addanother" class="btn btn-primary" {{ onclick_attrib }}>{% trans 'Save and add another' %}</button>{% endif %}
+{% if show_save_and_continue %}<button type="submit" value="" name="_continue" class="btn btn-primary"{{ onclick_attrib }}>{% trans 'Save and continue editing' %}</button>{% endif %}
+{% if show_save %}<button type="submit" class="btn btn-primary" name="_save" {{ onclick_attrib }}>{% trans 'Save' %}</button>{% endif %}
+</div>
